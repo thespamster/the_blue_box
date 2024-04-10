@@ -95,13 +95,22 @@ SOCIALACCOUNT_PROVIDERS = {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
+        'SCOPE': [
+            'profile',
+            'email',
+        ],
+        'AUTH_PARAMS': {
+            'access_type': 'offline',
+        },
+        'OAUTH_PKCE_ENABLED': True,
+    },
         'APP': {
             'client_id': 'CLIENT_ID',
             'secret': 'CLIENT_SECRET',
             'key': ''
         }
     }
-}
+
 
 SITE_ID = 1
 
