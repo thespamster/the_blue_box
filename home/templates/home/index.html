@@ -3,6 +3,60 @@
 
 {% block content %}
 
-   <h1>Index page</h1> 
+<div class="container-fluid">
+      <div class="row d-flex justify-content-center mx-auto ">
+            <div class="col-12 col-md-6 col-lg-4 test-style justify-content-center align-items-center d-none d-md-flex flex-fill">
+            <div class="materialise-tardis"><div id="img-tardis">
+                  <audio id="audio" src="static/sounds/tardis_takeoff.mp3"></audio>
+      <script>
+      var audio = document.getElementById("audio");
+      var img = document.getElementById("img-tardis");
+      function play() {
+      audio.play();
+      window.playResult = audio.play();
+      playResult.catch(e => {
+      window.playResultError = e;
+      })
+      }
+
+      function stop() {
+      audio.pause();
+      audio.currentTime=0;
+      }
+
+      img.addEventListener('click', play);
+      img.addEventListener('mouseover', play);
+      img.addEventListener('mouseout', stop);
+      </script>
+            </div></div>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 d-flex flex-column flex-fill g-0">
+                  <div class="welcome-style d-flex justify-content-center align-items-center mb-auto">
+                        <div class="col-11 blue-background m-3 p-1">
+                        <h4>Welcome to the Blue Box Exchange</h4>
+                        <p>This is an e-commerce site for all things Dr. Who related. As a collector myself
+                              I have enjoyed building my collection over many years.</p>
+                        <p>This site has been designed to offer collectors a place to buy and sell Who related 
+                              merchandise. All of the financial side is handled by Shopify so is safe and secure.</p>
+                        <p>You can browse the site without creating an account. Account creation is free and allows
+                              you to buy/sell, use the message boards and post artwork to the fan art section.</p>
+                        <p>Please check out the rules below. Enjoy the site and happy collecting.</p>
+                        </div>
+                  </div>
+                  <div class="rules-style d-flex justify-content-center align-items-center gs-2">
+                        <div class="col-11 blue-background m-3 p-1">
+                              <h4>Rules</h4>
+                              <p>The rules are very simple: <strong>Be nice and respect each other!</strong></p>
+                              <p>We want to encourage a friendly place to discuss our favourite show.</p>
+                              <p>This site is a place to celebrate all the differences that make Whovians a great fanbase.</p>
+                              <p>It is absolutely fine to have a different opinion to other people posting here.</p>
+                              <p>However. Any abusive behaviour will not be tolerated and can potentially result in a ban.</p>
+                              <p></p>
+                        </div>
+                  </div>
+            </div>
+            
+      </div>
+</div>
 
 {% endblock %}

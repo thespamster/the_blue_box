@@ -88,6 +88,60 @@ body {
     box-shadow: 2px 2px 2px black;
 }
 
+/* homepage styling */
+
+.welcome-style {
+    border: 2px solid gray;
+    height: 43dvh;
+     
+    
+}
+
+.rules-style {
+    border: 2px solid gray;
+    
+    width: 100%;
+    height: 43dvh;
+}
+
+.bluebox-style {
+    background-color: rgba(0, 59, 111, 0.15);
+    width: 100%;
+    height: 43dvh;
+}
+
+.blue-background {
+    background-color: rgba(0, 59, 111, 0.25);
+}
+
+.materialise-tardis {
+    width: 100%;
+    height: 88dvh;
+}
+
+#img-tardis {
+    width: 100%;
+    height: 88dvh;
+    background-image: url('../img/tardis.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#img-tardis:hover {
+    width: 100%;
+    height: 88dvh;
+    animation-name: materialise;
+    animation-duration: 14s;
+    z-index: 255;
+}
+
+/* The animation code */
+@keyframes materialise {
+    from {opacity: 1;}
+    to {opacity: 0;}
+  }
+
+
 
 
 
