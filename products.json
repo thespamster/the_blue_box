@@ -1,0 +1,311 @@
+[
+    {
+        "pk": 1,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473574019",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "The first words out of the mouth of the Sixth Doctor in 1984's 'The Caves of Androzani' set the tone for this loud and colourful incarnation. Size 280x356mm",
+        "price": 4.99,
+        "category": 1,
+        "rating": 4.0,
+        "image": "5052473574019.webp",
+        "tags": ["doctor-who", "dr-who", "sixth-doctor", "6th-doctor", "art", "print", "60th-anniversary", "colin-baker"]
+        }
+    },
+
+    {
+        "pk": 2,
+        "model": "products.product",
+        "fields": {
+        "ean": "9781405956895",
+        "name": "The official Doctor Who Annual 2024",
+        "description": "the Doctor Who 2024 Annual is the place to start an incredible journey. With everything you wanted to know about the Doctor, plus costumes, games, behind-the-scenes info. It even includes a never before seen Fourteenth Doctor story, and a sneak peek at the long-awaited Fifteenth Doctor",
+        "price": 9.99,
+        "category": 2,
+        "rating": 5.0,
+        "image": "9781405956895.webp",
+        "tags": ["doctor-who", "dr-who", "fourteenth-doctor", "14th-doctor", "book", "annual", "60th-anniversary", "david-tennant"]
+        }
+    },
+    {
+        "pk": 3,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561038006",
+        "name": "The Fourth Doctor Time Capsule",
+        "description": "Limited to just 5000, this deluxe box set celebrates one of the most loved Doctors, Tom Baker. Featuring exclusive content and memorabilia, beautifully packaged in an individually numbered bespoke Time Capsule. Includes exclusive contributions from Tom Baker himself and an exclusive action figure. Also includes an exclusive interview with Tom Baker, letter from Tom Baker introducing the set, DVD release of restored story 'Terror of the Zygons' with exclusive artwork, audiobook and novel with exclusive artwork plus art cards and photographic print.",
+        "price": 49.99,
+        "category": 5,
+        "rating": 4.0,
+        "image": "5051561038006.webp",
+        "tags": ["doctor-who", "dr-who", "fourth-doctor", "4th-doctor", "collectible", "dvd", "book", "action-figure", "50th-anniversary", "tom-baker"]
+        }
+    },
+    {
+        "pk": 4,
+        "model": "products.product",
+        "fields": {
+        "ean": "5012822044853",
+        "name": "Doctor Who DVD Board game. ",
+        "description": "Experience all the action with clips from the epic Doctor Who TV series! Journey through space and time with 11 Doctors and their companions and confront the most fearsome of Monsters. Test your knowledge against your companions and save the Earth from destruction! Select easy, medium or hard questions to play the game. If you think you know it all then think again! Contents include 1 DVD, 1 Doctor Who Game Board, 4 TARDIS playing pieces, 1 Numbered die, 1 Challenge die, 88 Question cards, 12 Time Travel cards and Game rules. For 2 or more players/teams aged 8 years and above. The perfect gift for fans of Doctor Who.",
+        "price": 24.99,
+        "category": 4,
+        "rating": 3.0,
+        "image": "5012822044853.webp",
+        "tags": ["doctor-who", "dr-who", "board-game", "game"]
+        }
+    },
+    {
+        "pk": 5,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473574026",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "Doctor no more! The Time War rages and the demands of battle have changed the Time Lord once known as the Doctor. Celebrating the War Doctor, as played by John Hurt, during Doctor Who's 60th anniversary. Size 280x356mm",
+        "price": 7.99,
+        "category": 3,
+        "rating": 5.0,
+        "image": "5052473574026.webp",
+        "tags": ["doctor-who", "dr-who", "war-doctor", "time-war", "art", "print", "60th-anniversary", "john-hurt"]
+        }
+    },
+    {
+        "pk": 6,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473583448",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "There are some corners of the universe which have bred the most terrible things… The Second Doctor takes a stand against the horrors of the universe with this defiant quote lifted from one of his earliest encounters with the Cybermen in 'The Moonbase'.Celebrating the Second Doctor, as played by Patrick Troughton, during Doctor Who's 60th anniversary. Size 280x356mm",
+        "price": 9.99,
+        "category": 3,
+        "rating": 5.0,
+        "image": "5052473583448.webp",
+        "tags": ["doctor-who", "dr-who", "second-doctor", "2nd-doctor", "moonbase", "art", "print", "60th-anniversary", "patrick-troughton"]
+        }
+    },
+    {
+        "pk": 7,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473619932",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "Don't forget me… 45 years on from Sarah's final regular appearance in Doctor Who, this exclusive art print features numerous quotes from the Doctor and Sarah that sum up their unique friendship - all against the backdrop of Sarah's costume from her final adventure 'The Hand Of Fear'. Size 280x356mm",
+        "price": 2.99,
+        "category": 3,
+        "rating": 5.0,
+        "image": "5052473619932.webp",
+        "tags": ["doctor-who", "dr-who", "fourth-doctor", "4th-doctor", "sarah-jane-smith", "art", "print", "60th-anniversary", "tom-baker"]
+        }
+    },
+    {
+        "pk": 8,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473571087",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "The Second Doctor fights across multiple time-zones only to find a startling revelation! Celebrating the Second Doctor, as played by Patrick Troughton, during Doctor Who's 60th anniversary. Size 280x356mm",
+        "price": 4.99,
+        "category": 3,
+        "rating": 4.0,
+        "image": "5052473571087.webp",
+        "tags": ["doctor-who", "dr-who", "second-doctor", "2nd-doctor", "wargames", "art", "print", "60th-anniversary", "patrick-troughton"]
+        }
+    },
+    {
+        "pk": 9,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473583462",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "Would you like a jelly baby? Celebrate the Fourth Doctor - the man who travelled alongside his best friend Sarah, robot dog K9, fellow Gallifreyan Romana, and many more! Size 280x356mm",
+        "price": 9.99,
+        "category": 3,
+        "rating": 5.0,
+        "image": "5052473583462.webp",
+        "tags": ["doctor-who", "dr-who", "fourth-doctor", "4th-doctor", "sarah-jane-smith", "romana", "k9", "k-9", "art", "print", "60th-anniversary", "tom-baker"]
+        }
+    },
+    {
+        "pk": 10,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473583455",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "Reverse the polarity of the neutron flow! Celebrate the Third Doctor. Exiled to Earth and working alongside the UNIT organisation, with scientist Liz Shaw, assistant Jo Grant and reporter Sarah Jane Smith. Size 280x356mm",
+        "price": 4.99,
+        "category": 3,
+        "rating": 4.0,
+        "image": "5052473583455.webp",
+        "tags": ["doctor-who", "dr-who", "third-doctor", "3rd-doctor", "sarah-jane-smith", "liz-shaw", "jo-grant", "k9", "k-9", "art", "print", "60th-anniversary"]
+        }
+    },
+    {
+        "pk": 11,
+        "model": "products.product",
+        "fields": {
+        "ean": "5052473586074",
+        "name": "60th Anniversary Diamond Collection Art Print",
+        "description": "Tom Baker is the Curator! Celebrate this mysterious figure who, first introduced in the 50th anniversary special 'The Day of the Doctor', may actually be the Doctor. Who knows… Size 280x356mm",
+        "price": 4.99,
+        "category": 3,
+        "rating": 5.0,
+        "image": "5052473586074.webp",
+        "tags": ["doctor-who", "dr-who", "fourth-doctor", "4th-doctor", "art", "print", "60thanniversary", "tom-baker"]
+        }
+    },
+    {
+        "pk": 12,
+        "model": "products.product",
+        "fields": {
+        "ean": "5055201849021",
+        "name": "Dr. Who and the Daleks Limited Edition 4K Ultra HD Steelbook",
+        "description": "4K restoration of Dr. Who & The Daleks (1965), starring British film legend Peter Cushing as everyone's favourite timelord. This was the first big screen film adaptation of British TV's most iconic sci-fi hero, and the first time Dr. Who was ever seen in colour!",
+        "price": 29.99,
+        "category": 1,
+        "rating": 4.0,
+        "image": "5055201849021.webp",
+        "tags": ["doctor-who", "dr-who", "peter-cushing", "4k", "movie", "steelbook"]
+        }
+    },
+    {
+        "pk": 13,
+        "model": "products.product",
+        "fields": {
+        "ean": "5055201849038",
+        "name": "Daleks' Invasion Earth 2150 A.D. Limited Edition 4k Ultra HD Steelbook",
+        "description": "Sci-fi adventure sequel to 'Dr. Who and the Daleks'. Peter Cushing stars as the Doctor, who travels to a future Earth in 2150 A.D. to find that the intergalactic warmongering Daleks have invaded. He joins the Earth resistance movement to help them save the planet and prevent the survivors from being turned into Robomen.",
+        "price": 29.99,
+        "category": 1,
+        "rating": 4.0,
+        "image": "5055201849038.webp",
+        "tags": ["doctor-who", "dr-who", "peter-cushing", "4k", "movie", "steelbook"]
+        }
+    },
+    {
+        "pk": 14,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561004797",
+        "name": "Doctor Who, The Collection: Season 2. 9 Discs Limited Edition Blu-ray Box Set",
+        "description": "All nine stories from the second season of the classic BBC sci-fi adventure drama starring William Hartnell as the legendary Time Lord. Includes, 'Planet of Giants', 'The Dalek Invasion of Earth', 'The Rescue', 'The Romans', 'The Web Planet', 'The Crusade', 'The Space Museum', 'The Chase' and 'The Time Meddler'. Plus lots of exclusive extras",
+        "price": 79.99,
+        "category": 1,
+        "rating": 5.0,
+        "image": "5051561004797.webp",
+        "tags": ["doctor-who", "dr-who", "first-doctor", "1st-doctor", "blu-ray", "boxset", "william-hartnell"]
+        }
+    },
+    {
+        "pk": 15,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561005909",
+        "name": "Doctor Who, The Daleks in Colour Limited Edition Blu-ray Steelbook",
+        "description": "The seven original 25 minute episodes have now been colourised and weaved together into a 75 minute blockbuster. With brand new sound and a new score created by Mark Ayres The Daleks has been gloriously updated, whilst ensuring the original classic story remains as thrilling as it was when it was first seen back in 1963.",
+        "price": 29.99,
+        "category": 1,
+        "rating": 4.0,
+        "image": "5051561005909.webp",
+        "tags": ["doctor-who", "dr-who", "first-doctor", "1st-doctor", "blu-ray", "steelbook", "william-hartnell"]
+        }
+    },
+    {
+        "pk": 16,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561005244",
+        "name": "Doctor Who, Galaxy 4 Limited Edition Blu-ray Steelbook",
+        "description": "William Hartnell stars as the First Doctor in this animated serial from 1965. The Doctor lands on a planet in the midst of a civil war and teetering on the brink of total destruction. With his companions, Vicki and Steven, the Doctor tries to broker a peace deal between rival factions the Drahvins and the Rills.",
+        "price": 4.99,
+        "category": 1,
+        "rating": 4.0,
+        "image": "5051561005244.webp",
+        "tags": ["doctor-who", "dr-who", "first-doctor", "1st-doctor", "blu-ray", "steelbook", "william-hartnell"]
+        }
+    },
+    {
+        "pk": 17,
+        "model": "products.product",
+        "fields": {
+        "ean": "9781849906777",
+        "name": "Doctor Who And The Pirate Planet",
+        "description": "Target Collection paperback. The hugely powerful Key to Time has been split into six segments, all of which have been disguised and hidden throughout time and space. Now the even more powerful White Guardian wants the Doctor to find the pieces. With the first segment successfully retrieved, the Doctor, Romana and K-9 trace the second segment of the Key to the planet Calufrax. But when they arrive at exactly the right point in space, they find themselves on exactly the wrong planet, Zanak.",
+        "price": 7.99,
+        "category": 2,
+        "rating": 5.0,
+        "image": "9781849906777.webp",
+        "tags": ["doctor-who", "dr-who", "fourth-doctor", "4th-doctor", "romana", "k9", "james-goss", "douglas-adams", "tom-baker"]
+        }
+    },
+    {
+        "pk": 18,
+        "model": "products.product",
+        "fields": {
+        "ean": "9781785941054",
+        "name": "Doctor Who & The Krikkitmen",
+        "description": "Hardcover. After a long and bloody conflict, the Time Lords imprisoned Krikkit within an envelope of Slow Time, a prison that could only be opened with the Wicket Gate key, a device that resembles, to human eyes at least, an oversized set of cricket stumps…",
+        "price": 14.99,
+        "category": 2,
+        "rating": 5.0,
+        "image": "9781785941054.webp",
+        "tags": ["doctor-who", "dr-who", "fourth-doctor", "4th-doctor", "romana", "james-goss", "douglas-adams", "tom-baker"]
+        }
+    },
+    {
+        "pk": 19,
+        "model": "products.product",
+        "fields": {
+        "ean": "9780241356173",
+        "name": "Doctor Who, Thirteen Doctors 13 Stories",
+        "description": "A new version of this much-loved anthology, with a brand-new story featuring the Thirteenth Doctor from literary sensation Naomi Alderman!",
+        "price": 4.99,
+        "category": 2,
+        "rating": 4.0,
+        "image": "9780241356173.webp",
+        "tags": ["doctor-who", "dr-who", "thirteenth-doctor", "13th-doctor", "anthology", "naomi-alderman", "jodie-whittaker"]
+        }
+    },
+    {
+        "pk": 20,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561004681",
+        "name": "Doctor Who, The Collection: Season 10. 6 Discs Limited Edition Blu-ray Box Set",
+        "description": "All five serials from the tenth season of the classic BBC sci-fi adventure drama starring Jon Pertwee as the legendary Time Lord. The stories are, 'The Three Doctors', 'Carnival of Monsters', 'Frontier in Space', 'Planet of the Daleks' and 'The Green Death'.",
+        "price": 104.99,
+        "category": 1,
+        "rating": 5.0,
+        "image": "5051561004681.webp",
+        "tags": ["doctor-who", "dr-who", "third-doctor", "3rd-doctor", "john-pertwee", "blu-ray", "boxset"]
+        }
+    },
+    {
+        "pk": 21,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561005169",
+        "name": "Doctor Who, The Collection: Season 20. 8 Discs Limited Edition Blu-ray Box Set",
+        "description": "All six serials from the 20th season of the classic BBC sci-fi adventure drama starring Peter Davison as the legendary Time Lord. The stories are: 'Arc of Infinity', 'Snakedance', 'Mawdryn Undead', 'Terminus', 'Enlightenment' and 'The King's Demons'.The 20th anniversary special 'The Five Doctors' is also included.",
+        "price": 54.99,
+        "category": 1,
+        "rating": 5.0,
+        "image": "5051561005169.webp",
+        "tags": ["doctor-who", "dr-who", "fifth-doctor", "5th-doctor", "peter-davison", "blu-ray", "boxset", "20th-anniversary"]
+        }
+    },
+    {
+        "pk": 22,
+        "model": "products.product",
+        "fields": {
+        "ean": "5051561004803",
+        "name": "Doctor Who, The Collection: Season 26. 7 Discs Limited Edition Blu-ray Box Set",
+        "description": "All four stories from the 26th season of the classic BBC sci-fi adventure drama starring Sylvester McCoy as the legendary Time Lord. The episodes are, 'Battlefield', 'Ghost Light', 'The Curse of Fenric' and 'Survival'. Plus loads of exclusive extras.",
+        "price": 69.99,
+        "category": 1,
+        "rating": 5.0,
+        "image": "5051561004803.webp",
+        "tags": ["doctor-who", "dr-who", "seventh-doctor", "7th-doctor", "sylvester-mccoy", "blu-ray", "boxset"]
+        }
+    }
+]
