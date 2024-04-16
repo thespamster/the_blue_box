@@ -1,9 +1,6 @@
 /* Custom styling for base.html */
 
 /* navbar color and style */
-.navbar-color-style {
-    background-color: rgba(0,59,111,0.25);
-}
 
 #navbar-icon {
     width: 40px;
@@ -15,9 +12,9 @@
 }
 
 .navbar-search-style {
-    border-radius: 0px;
+    border-radius: 5px;
     box-shadow: 2px 2px 2px black;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .btn-info {
@@ -25,18 +22,20 @@
     background-color: rgba(0, 59, 111, 1.0);
     border: 0;
     box-shadow: 2px 2px 2px black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
 }
 
 .btn-info:hover {
-    color: black;
-    background-color: rgba(59, 235, 36, 0.8);
+    color: white;
+    background-color: rgba(27, 155, 10, 0.8) !important; /* !important to override Bootstrap default */
     border: 0;
     box-shadow: 2px 2px 2px black;
 }
 
 .btn-info:active {
-    color: black;
-    background-color: rgba(33, 255, 4, 0.8) !important; /* !important to override Bootstrap default */
+    color: white !important; /* !important to override Bootstrap default */
+    background-color: rgba(44, 175, 27, 0.8) !important; /* !important to override Bootstrap default */
     border: 0;
     box-shadow: 2px 2px 2px black;
 }
@@ -51,96 +50,72 @@
 }
 
 .nav-link {
-    font-weight:500;
+    color: black;
+    font-weight:400;
 }
 
 /* body style */
 body {
     height: 100dvh;
+    background-color: rgba(0, 59, 111, 0.10);
 }
 
 /* footer style */
+
 .footer-style {
-    background-color: rgba(0, 59, 111, 0.25);
-    color: black;
+    color: rgb(0, 59, 111);
+    border-radius: 5px;
+    border-width: 3px;
     margin: 10px;
     padding: 5px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .btn-danger {
-    border-radius: 0;
+    background-color: rgb(0, 59, 111) !important; /* !important to override Bootstrap default */
+    border-radius: 5px;
     border: 0;
     box-shadow: 2px 2px 2px black;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 .btn-danger:hover {
-    background-color: rgba(238, 13, 13, 0.8);
+    background-color: rgba(27, 155, 10, 0.8) !important; /* !important to override Bootstrap default */
     border: 0;
     box-shadow: 2px 2px 2px black;
 }
 
 .btn-danger:active {
-    color: black;
-    background-color: rgba(255, 12, 4, 0.8) !important; /* !important to override Bootstrap default */
+    background-color: rgba(44, 175, 27, 0.8) !important; /* !important to override Bootstrap default */
     border: 0;
     box-shadow: 2px 2px 2px black;
 }
 
 /* homepage styling */
 
-.welcome-style {
-    border: 2px solid gray;
-    height: 43dvh;
-     
-    
-}
-
-.rules-style {
-    border: 2px solid gray;
-    
+.alert-style {
     width: 100%;
-    height: 43dvh;
-}
-
-.bluebox-style {
+    height: 15rem;
     background-color: rgba(0, 59, 111, 0.15);
+    border: 0;
+}
+
+#tardis-card-style {
+    width: 128px;
+    height: 128px;
+}
+
+.welcome-home-style {
     width: 100%;
-    height: 43dvh;
+    height: 20dvh;
+    border: 0;
+    border-radius: 5px;
+    padding: 2rem;
+    box-shadow: 2px 2px 2px black;
+    background-color: rgba(0, 59, 111, 0.15);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
 }
-
-.blue-background {
-    background-color: rgba(0, 59, 111, 0.25);
-}
-
-.materialise-tardis {
-    width: 100%;
-    height: 88dvh;
-}
-
-#img-tardis {
-    width: 100%;
-    height: 88dvh;
-    background-image: url('../img/tardis.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-#img-tardis:hover {
-    width: 100%;
-    height: 88dvh;
-    animation-name: materialise;
-    animation-duration: 14s;
-    z-index: 255;
-}
-
-/* The animation code */
-@keyframes materialise {
-    from {opacity: 1;}
-    to {opacity: 0;}
-  }
-
 
 
 
