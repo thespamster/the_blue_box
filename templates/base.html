@@ -67,7 +67,7 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="#"
-                    >Marketplace</a
+                    >Shop</a
                   >
                 </li>
                 <li class="nav-item">
@@ -78,11 +78,22 @@
                 <li class="nav-item">
                   <a class="nav-link" aria-current="page" href="#">Fan Art</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#"
-                    >My Account</a
-                  >
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    My Account
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Account Action 1</a></li>
+                    <li><a class="dropdown-item" href="#">Account Action 2</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Account Action 3</a></li>
+                  </ul>
                 </li>
+                <li class="nav-item align-self-center ps-lg-5 pt-2 pt-lg-1">
+                  <a href="#"><i class="fa-solid fa-cart-shopping fa-2x cart-style"></i></a>
+                </li>
+
               </ul>
               <form class="d-flex" role="search">
                 <input
@@ -117,10 +128,19 @@
 
   <footer>
     <div class="container-fluid">
-      <div class="row d-flex justify-content-center gx-1">
-        <div class="col-12 d-flex justify-content-between align-items-center footer-style px-3">
-          <div>&copy; 4uxdesign 2024</div>
-          <div><button class="btn btn-small btn-danger">Contact Admin</button></div>
+      <div class="row d-flex text-center align-items-center mt-2" id="free-delivery">
+        <div class="col-12 ">
+          <h5>Free delivery on all orders over £{{ free_shipping }}</h5>
+        </div>
+
+      </div>
+      <div class="row d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-between align-items-center footer-style">
+          <div><a href="#" id="link-style">&copy; 4uxdesign 2024</a></div>
+          <div class="w-25 d-flex justify-content-evenly">
+            <a href="#"><i class="fa-brands fa-discord fa-2x icon-style"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope fa-2x icon-style"></i></i></a>
+          </div>
         </div>
       </div>
     </div>

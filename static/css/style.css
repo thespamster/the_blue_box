@@ -3,8 +3,8 @@
 /* navbar color and style */
 
 #navbar-icon {
-    width: 40px;
-    height: 40px;
+    width: 45px;
+    height: 45px;
 }
 
 .btn-primary {
@@ -63,12 +63,18 @@ body {
 /* footer style */
 
 .footer-style {
-    color: rgb(0, 59, 111);
-    border-radius: 5px;
-    border-width: 3px;
-    margin: 10px;
-    padding: 5px;
-    font-weight: 400;
+    background-color: rgba(0, 59, 111, 0.15);
+    width: 100%;
+    margin: 0;
+    padding: 1rem;
+    font-style: "Roboto", sans-serif;
+    font-weight: 500;
+    
+}
+
+#link-style {
+    text-decoration: none;
+    color: black;
 }
 
 .btn-danger {
@@ -117,6 +123,24 @@ body {
     font-weight: 300;
 }
 
+/* shopping cart styling */
 
+.cart-style {
+    color: rgb(0, 59, 111);
+}
+
+/* delivery banner styling */
+
+#free-delivery {
+    color: white;
+    height: 5dvh;
+    background-color: rgba(0, 59, 111, 0.45);
+}
+
+/* icon styling */
+
+.icon-style {
+    color: rgb(0, 59, 111);
+}
 
 
