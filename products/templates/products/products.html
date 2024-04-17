@@ -3,11 +3,20 @@
 
 {% block product_content %}
 
-    <div class="container">
+    <div class="container-flex">
         <div class="row">
-            <div class="col-12">
+            <div class="col-12 d-flex">
                 
-                {{ products }}
+                {% for product in products %}
+
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'img/product_img/{{ product.image }}' %}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                  </div>
+
+                {% endfor %}
 
             </div>
         </div>
