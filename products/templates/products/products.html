@@ -1,26 +1,39 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 
 {% block product_content %}
 
-    <div class="container-flex">
-        <div class="row">
-            <div class="col-12 d-flex">
-                
-                {% for product in products %}
+<div class="container-fluid">
+    <div class="row justify-content-center">
 
-                <div class="card" style="width: 18rem;">
-                    <img src="{% static 'img/product_img/{{ product.image }}' %}" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    </div>
-                  </div>
 
-                {% endfor %}
+        {% for product in products %}
 
+        <div class="col-5 col-sm-4 col-lg-3 col-xl-2 m-1">
+
+            {% if product.image %}
+
+            <button type="button" class="button-style">
+            <div class="card card-style">
+                <div class="card-header mb-1">
+                    {{ product.category.display_name }}
+                </div>
+                <img src="{{ product.image_url }}" class="card-img-top product-image-style mx-auto" alt="{{ product.name }}">
+                <div class="card-body">
+                    <p class="card-text">{{ product.description|truncatechars:60 }}</p>
+                </div>
             </div>
+            </button>
+
+            {% endif %}
+
         </div>
+
+        {% endfor %}
+
+
     </div>
+</div>
 
 
 {% endblock %}
