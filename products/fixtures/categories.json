@@ -1,0 +1,8 @@
+[
+    {"pk": 1, "model": "products.category", "fields": {"name": "dvd", "display_name": "DVD"}},
+    {"pk": 2, "model": "products.category", "fields": {"name": "books", "display_name": "Books"}},
+    {"pk": 3, "model": "products.category", "fields": {"name": "posters_prints", "display_name": "Posters & Prints"}},
+    {"pk": 4, "model": "products.category", "fields": {"name": "games", "display_name": "Games"}},
+    {"pk": 5, "model": "products.category", "fields": {"name": "collectibles", "display_name": "Collectibles, Rare & Limited Editions"}},
+    {"pk": 6, "model": "products.category", "fields": {"name": "spinoffs", "display_name": "Spinoff Series' DVDs and Blu-rays"}}
+]
