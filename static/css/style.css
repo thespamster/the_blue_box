@@ -57,7 +57,7 @@
 /* body style */
 body {
     height: 100dvh;
-    background-color: rgba(0, 59, 111, 0.10);
+    background-color: rgba(0, 59, 111, 0.07);
 }
 
 /* footer style */
@@ -143,25 +143,26 @@ body {
     color: rgb(0, 59, 111);
 }
 
+/* CSS to change the look of Bootstrap cards used to display products */
+
 .product-image-style {
     width: 150px;
     height: 150px;
-    border-radius: 5px;
-    box-shadow: 2px 2px 2px black;
 }
 
 .card-style {
     font-style: "Roboto", sans-serif;
     font-size: 0.75rem;
     font-weight: 400;
-    
+    border: 0;
 }
 
 .card-header {
-    background-color: rgba(0, 59, 111, 0.25);
+    background-color: rgba(0, 59, 111, 0.15);
     font-style: "Roboto", sans-serif;
     font-size: 0.85rem;
     font-weight: 500;
+    border: 0;
 }
 
 .button-style {
@@ -169,6 +170,8 @@ body {
     padding: 0;
     margin: 0;
 }
+
+/* Change the look of href link elements */
 
 a {
     text-decoration: none;

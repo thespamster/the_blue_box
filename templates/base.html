@@ -85,11 +85,11 @@
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="user-options">
 
-                    {% if request.user.is.authenticated %}
+                    {% if request.user.is_authenticated %}
 
-                        {% if request.user.is.superuser %}
+                        {% if request.user.is_superuser %}
 
-                            <li><a class="dropdown-item" href="#">Admin</a></li>
+                            <li><a class="dropdown-item" href="">Admin</a></li>
 
                         {% endif %}
 
@@ -109,10 +109,15 @@
                   <a href="#"><i class="fa-solid fa-cart-shopping fa-2x cart-style"></i>
                   <span class="badge text-bg-danger">
                     {% if shopping_total %}
+
                       £{{ shopping_total|floatformat:2 }}
+
                     {% else %}
+
                       £0.00
+
                     {% endif %}
+                    
                   </span>
                   </a>
                 </li>
