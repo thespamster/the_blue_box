@@ -20,7 +20,9 @@
                 </div>
                 <img src="{{ product.image_url }}" class="card-img-top product-image-style mx-auto" alt="{{ product.name }}">
                 <div class="card-body">
+                    <p class="card-text"><strong>{{ product.name|truncatechars:60 }}</strong></p>
                     <p class="card-text">{{ product.description|truncatechars:60 }}</p>
+                    <p class="card-text"><strong>£{{ product.price }}</strong></p>
                 </div>
             </div>
             </button>
