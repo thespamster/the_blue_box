@@ -7,38 +7,16 @@
     height: 45px;
 }
 
-.btn-primary {
-    color: black !important; /* !important to override Bootstrap default */
-}
-
-.navbar-search-style {
+.search-btn-style {
     border-radius: 5px;
-    box-shadow: 2px 2px 2px black;
-    font-weight: 400;
-}
-
-.btn-info {
+    width: 4rem;
+    border: 1px solid rgba(0, 59, 111, 0.5);
     color: white;
-    background-color: rgba(0, 59, 111, 1.0);
+    background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
     border: 0;
-    box-shadow: 2px 2px 2px black;
-    font-family: "Roboto", sans-serif;
-    font-weight: 300;
 }
 
-.btn-info:hover {
-    color: white;
-    background-color: rgba(27, 155, 10, 0.8) !important; /* !important to override Bootstrap default */
-    border: 0;
-    box-shadow: 2px 2px 2px black;
-}
-
-.btn-info:active {
-    color: white !important; /* !important to override Bootstrap default */
-    background-color: rgba(44, 175, 27, 0.8) !important; /* !important to override Bootstrap default */
-    border: 0;
-    box-shadow: 2px 2px 2px black;
-}
+/* CSS to change hamburger styling */
 
 .navbar-toggler{
     border: 0;
@@ -47,6 +25,7 @@
 
 .navbar-toggler:active{
     color: rgba(0, 59, 111, 0);
+    border-radius: 5px;
 }
 
 .nav-link {
@@ -54,7 +33,13 @@
     font-weight:400;
 }
 
+.badge {
+    height: 1.25rem;
+    margin-bottom: 1px;
+}
+
 /* body style */
+
 body {
     height: 100dvh;
     background-color: rgba(0, 59, 111, 0.07);
@@ -72,29 +57,27 @@ body {
     
 }
 
+/* footer that sticks to bottom of screen or bottom of content */
+
+.fix-footer-pos {
+    min-height: 69dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto !important;
+}
+
 #link-style {
     text-decoration: none;
     color: rgb(0, 59, 111);
 }
 
-.btn-danger {
-    background-color: rgb(0, 59, 111) !important; /* !important to override Bootstrap default */
+.btn-primary {
     border-radius: 5px;
     border: 0;
-    box-shadow: 2px 2px 2px black;
     font-weight: 400;
-}
-
-.btn-danger:hover {
-    background-color: rgba(27, 155, 10, 0.8) !important; /* !important to override Bootstrap default */
-    border: 0;
-    box-shadow: 2px 2px 2px black;
-}
-
-.btn-danger:active {
-    background-color: rgba(44, 175, 27, 0.8) !important; /* !important to override Bootstrap default */
-    border: 0;
-    box-shadow: 2px 2px 2px black;
 }
 
 /* homepage styling */
@@ -117,7 +100,6 @@ body {
     border: 0;
     border-radius: 5px;
     padding: 2rem;
-    box-shadow: 2px 2px 2px black;
     background-color: rgba(0, 59, 111, 0.15);
     font-family: "Roboto", sans-serif;
     font-weight: 300;
@@ -140,7 +122,14 @@ body {
 /* icon styling */
 
 .icon-style {
-    color: rgb(0, 59, 111);
+    color: rgb(0, 59, 111) !important;
+}
+
+.bs-icon-style {
+    color: rgb(0, 59, 111) !important;
+    width: 32px;
+    height: 32px;
+
 }
 
 /* CSS to change the look of Bootstrap cards used to display products */

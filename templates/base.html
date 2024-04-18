@@ -32,6 +32,7 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
     
     {% endblock %}
@@ -106,8 +107,11 @@
                   </ul>
                 </li>
                 <li class="nav-item align-self-center ps-lg-5 pt-2 pt-lg-1 d-flex">
-                  <a href="#"><i class="fa-solid fa-cart-shopping fa-2x cart-style"></i>
+                  <a href="#">
+                    <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap">
+                  </a>
                   <span class="badge text-bg-danger">
+
                     {% if shopping_total %}
 
                       £{{ shopping_total|floatformat:2 }}
@@ -127,9 +131,8 @@
                 <input
                   class="form-control me-2 navbar-search-style" type="text" name="q" placeholder="Search" aria-label="Search"/>
                 <button
-                  class="form-control btn btn-sm btn-info navbar-search-style" type="submit">
-                  <i class="fa-solid fa-magnifying-glass pe-2"></i>
-                  Search
+                  class="form-control btn btn-sm btn-primary search-btn-style" type="submit">
+                  <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
               </form>
             </div>
@@ -146,6 +149,7 @@
 
     {% block product_content %} {%endblock %}
 
+  <div class="fix-footer-pos">  
   <footer>
     <div class="container-fluid">
       <div class="row d-flex text-center align-items-center mt-2" id="free-delivery">
@@ -165,8 +169,10 @@
       </div>
     </div>
   </footer>
+  </div>
 
   {% block js %}
+
     <script
       src="https://code.jquery.com/jquery-3.7.1.js"
       integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
