@@ -40,7 +40,7 @@
     <title>The Blue Box Shop {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <div class="set-height">
+    
 
     <!-- Bootstrap5.3.3 navbar customised -->
     <header>
@@ -140,7 +140,9 @@
         </nav>
       </div>
     </header>
+    <div class="main-div">
 
+    
     {% if messages %}
     
     {% endif %}
@@ -148,8 +150,8 @@
     {% block page_welcome %} {% endblock %}
 
     {% block product_content %} {%endblock %}
-    </div>
-  <div class="fix-footer-pos">  
+  </div> 
+    
   <footer>
     <div class="container-fluid">
       <div class="row d-flex text-center align-items-center mt-2" id="free-delivery">
@@ -169,7 +171,7 @@
       </div>
     </div>
   </footer>
-  </div>
+  
 
   {% block js %}
 
