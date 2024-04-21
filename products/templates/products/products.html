@@ -8,7 +8,7 @@
 
         {% for product in products %}
 
-        <div class="col-5 col-sm-4 col-lg-3 col-xl-2 m-1">
+        <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1">
             
             <div class="card card-style">
                 <a href="{% url 'product_detail' product.id %}">
@@ -34,7 +34,7 @@
                 </div>
                 <div class="card-body">
                     <p class="card-text"><strong>{{ product.name|truncatechars:60 }}</strong></p>
-                    <p class="card-text">{{ product.description|truncatechars:60 }}</p>
+                    <p class="card-text">{{ product.description|truncatechars:70 }}</p>
                     <p class="card-text"><strong>£{{ product.price }}</strong></p>
                 </div>
             </div>
