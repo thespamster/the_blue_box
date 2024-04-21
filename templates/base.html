@@ -40,7 +40,7 @@
     <title>The Blue Box Shop {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    
+    <div class="set-height">
 
     <!-- Bootstrap5.3.3 navbar customised -->
     <header>
@@ -127,9 +127,9 @@
                 </li>
 
               </ul>
-              <form class="d-flex" role="search" method="GET" action="">
+              <form class="d-flex" role="search" method="GET" action="{% url 'products' %}">
                 <input
-                  class="form-control me-2 navbar-search-style" type="text" name="q" placeholder="Search" aria-label="Search"/>
+                  class="form-control me-2 navbar-search-style" type="text" name="q" placeholder="Search the shop" aria-label="Search"/>
                 <button
                   class="form-control btn btn-sm btn-primary search-btn-style" type="submit">
                   <i class="fa-solid fa-magnifying-glass"></i>
@@ -148,7 +148,7 @@
     {% block page_welcome %} {% endblock %}
 
     {% block product_content %} {%endblock %}
-
+    </div>
   <div class="fix-footer-pos">  
   <footer>
     <div class="container-fluid">
