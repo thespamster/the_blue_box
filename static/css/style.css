@@ -139,7 +139,7 @@ body {
 }
 
 .bs-icon-style {
-    color: rgb(0, 59, 111) !important;
+    filter: invert(15%) sepia(74%) saturate(1867%) hue-rotate(192deg) brightness(89%) contrast(103%);
     width: 32px;
     height: 32px;
 
