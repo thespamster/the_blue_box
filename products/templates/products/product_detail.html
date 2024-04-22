@@ -6,43 +6,40 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
 
-        <div class="col-12 col-md-10 col-xl-8 m-1">
-            <div class="card card-style">
-                <div class="card-header mb-1 text-center">
-                    {{ product.category.display_name }}
-                </div>
-                <div class="d-flex justify-content-center">
+        <div class="col-sm-12 col-lg-6 m-1">
+            <div class="d-flex flex-column justify-content-center align-items-center">
 
-                    {% if product.image %}
-    
-                    <a href="#">
-                        <img src="{{ product.image_url }}" class="card-img-top product-detail-image-style mx-auto" alt="{{ product.name }}">
-                    </a>
-    
-                    {% else %}
-    
-                    <a href="#">
-                        <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-detail-image-style mx-auto" alt="{{ product.name }}">
-                    </a>
-    
-                    {% endif %}
-    
-                </div>
-                <div class="card-body">
-                    <p class="card-text text-style text-center"><strong>{{ product.name }}</strong></p>
-                    <p class="card-text text-style fw-light text-start">{{ product.description }}</p>
-                    
+                {% if product.image %}
 
-                    
+                <div><a href="#">
+                        <img src="{{ product.image_url }}" class="card-img-top product-detail-image-style img-fluid"
+                            alt="{{ product.name }}">
+                    </a></div>
 
-                    <div class="card-text">
-                   
+                {% else %}
+
+                <a href="#">
+                    <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-detail-image-style img-fluid"
+                        alt="{{ product.name }}">
+                </a>
+
+                {% endif %}
+
+                <p>(hover over image to enlarge)</p>
+            </div>
+        </div>
+        <div class="col-sm-12 col-lg-4 m-1 d-flex align-items-center product-detail-text-style pt-2">
+            <div class="card-body">
+                <p class="card-text text-style text-start"><strong>{{ product.name }}</strong></p>
+                <p class="card-text text-style fw-light text-start">{{ product.description }}</p>
+                <div class="card-text">
                     <p class="card-text text-style"><strong>£{{ product.price }}</strong></p>
-                  
+
                     {% if product.rating %}
-                
-                    <p class="image-text-vertical-align"><img class="pe-1 rating-star-size" src="{% static 'img/bootstrap_icons/star.svg' %}">{{ product.rating }}</p>
-              
+
+                    <p class="image-text-vertical-align"><img class="pe-1 rating-star-size"
+                            src="{% static 'img/bootstrap_icons/star.svg' %}">{{ product.rating }}</p>
+
                     {% else %}
 
                     <p class="card-text text-style fw-light">Not yet rated</p>
@@ -51,16 +48,13 @@
 
                     <p><strong>Quick search: </strong>
 
-                    
+                        {% for tag in tags %}
 
-                    {% for tag in tags %}
+                        <a href="#" class="tag-link-style">{{ tag }} </a>
 
-                    <a href="#" class="tag-link-style">{{ tag }} </a>
+                        {% endfor %}
 
-                    {% endfor %}
                     </p>
-                    </div>
-
                 </div>
             </div>
         </div>
