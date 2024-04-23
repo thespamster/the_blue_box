@@ -49,7 +49,6 @@ body {
 
 .main-div {
     flex: 1;
-    
 }
 
 .div-align {
@@ -71,9 +70,6 @@ body {
     font-weight: 500;
     
 }
-
-/* footer that sticks to bottom of screen or bottom of content */
-
 
 #link-style {
     text-decoration: none;
@@ -158,7 +154,6 @@ body {
 .product-image-style:hover {
     transform: scale(2);
     border-radius: 5px;
-    border: 2px solid rgba(0, 59, 111, 1);
 }
 
 .text-style {
@@ -188,7 +183,6 @@ body {
 .product-detail-image-style:hover {
     transform: scale(1.5);
     border-radius: 5px;
-    border: 2px solid rgba(0, 59, 111, 1);
 }
 
 .product-detail-text-style {
@@ -218,12 +212,32 @@ a {
     font-weight: 400;
 }
 
-/* Change the look of the Bootstrap carousel image component */
+/* Change the look of the Bootstrap form tag elements */
 
-.carousel_img_style {
-    height: 350px !important;
-    width: 350px !important;
+.tag-btn-style {
+    color: rgba(0, 59, 111, 1);
+    width: 5rem;
+    border: 1px solid rgba(0, 59, 111, 0.5);
+    padding: 0;
+    margin: 2px;
 }
+
+.tag-btn-style:hover {
+    background-color: rgba(0, 59, 111, 1);
+    border: 1px solid rgba(0, 59, 111, 0.5);
+    width: 5rem;
+    padding: 0;
+    margin: 2px;
+}
+
+.tag-btn-style:active {
+    background-color: rgba(0, 59, 111, 1) !important; /* !important to override Bootstrap default */
+    border: 1px solid rgba(0, 59, 111, 0.5);
+    width: 5rem;
+    padding: 0;
+    margin: 2px;
+}
+
 
 
 

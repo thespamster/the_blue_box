@@ -1,50 +1,93 @@
 {% extends "base.html" %}
-{% load static %} 
+{% load static %}
 
 {% block page_welcome %}
 
 <div class="container-fluid">
       <div class="row">
-            <div class="col-12 justify-content-center align-items-center d-none d-md-flex pt-2 pb-5">
-                  <img src="{% static 'img/dr_who_banner.webp' %}" class="banner-style">
+            <div class="col-12">
+                  <img src="{% static 'img/dr_who_banner.webp' %}" class="banner-style" alt="blue_box_shop_banner">
             </div>
-            <div class="container d-flex justify-content-center">
-                  <div>
-            <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel">
-                  <div class="carousel-inner">
-                        <div class="carousel-item active">
-                              <img src="{{ image1 }}" class="d-block w-100 carousel_img_style" alt="...">
+      </div>
+
+      <div class="row my-5">
+            <div class="col-12">
+                  <div class="welcome-home-style d-flex align-items-center justify-content-center">
+                        <div class="w-50"><img id="tardis-card-style" src="{% static 'img/tardis.png' %}"
+                                    alt="tardis_image" class="img-fluid d-none d-lg-flex">
                         </div>
-                        <div class="carousel-item">
-                              <img src="{{ image2 }}" class="d-block w-100 carousel_img_style" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                              <img src="{{ image3 }}" class="d-block w-100 carousel_img_style" alt="...">
-                        </div>
-                  </div>
-                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Previous</span>
-                  </button>
-                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="visually-hidden">Next</span>
-                  </button>
-            </div>
-            </div>
-            </div>
-            <div class="col-12 justify-content-center align-items-center pt-5">
-                        <div class="welcome-home-style d-flex justify-content-center align-items-center">
-                              <div class="w-100"><img id="tardis-card-style" src="{% static 'img/tardis.png' %}" alt="tardis_image" class="img-fluid d-none d-md-flex"></div>
-                              <div>
-                                    <p>Welcome to the Blue Box Shop. Here you can browse and purchase all the Dr. Who merch that you could possibly want.
-                                    Shopify handles the payment processing so you can sit back knowing that all transactions are safe & secure. Browse the marketplace, message boards and fan art 
-                                    sections without needing to create an account. If you want to make a purchase or interact with the message boards you will need to create a free account. Enjoy!
-                                    </p>
-                              </div>
+                        <div>
+                              <p>Welcome to the Blue Box Shop. Here you can browse and purchase all the Dr. Who merch
+                                    that you
+                                    could possibly want. Shopify handles the payment processing so you can sit back
+                                    knowing that all transactions
+                                    are safe & secure. Browse the marketplace, message boards and fan art
+                                    sections without needing to create an account. If you want to make a purchase or
+                                    interact
+                                    with the message boards you will need to create a free account. Enjoy!
+                              </p>
                         </div>
                   </div>
             </div>
       </div>
+
+      <div class="row justify-content-center">
+            <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1 d-flex align-items-center">
+                  <div class="card card-style">
+                        <div class="card-header mb-1 text-center">
+                              <strong>Featured Items</strong>
+                        </div>
+                        <div class="card-body">
+                              <p class="card-text">Check out our extensive range of Dr. Who related merchandise in the
+                                    shop by
+                                    clicking these featured items, clicking the shop link above or by using the search
+                                    bar
+                                    to search for a specific item or items.
+                              </p>
+                        </div>
+                  </div>
+            </div>
+
+            {% for featured in featured_products %}
+
+            <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1 d-flex justify-content-center align-items-center">
+
+                  <div class="card card-style w-100">
+                        <a href="{% url 'product_detail' featured.id %}">
+                              <div class="card-header mb-1 text-center">
+                                    {{ featured.category.display_name }}
+                              </div>
+                              <div class="d-flex justify-content-center">
+
+                                    {% if featured.image %}
+
+
+                                    <img src="{{ featured.image_url }}" class="card-img-top product-image-style mx-auto"
+                                          alt="{{ featured.name }}">
+
+
+                                    {% else %}
+
+
+                                    <img src="{{ MEDIA_URL }} no_image.webp"
+                                          class="card-img-top product-image-style mx-auto" alt="{{ featured.name }}">
+
+
+                                    {% endif %}
+
+                              </div>
+                              <div class="card-body">
+                                    <p class="card-text"><strong>{{ featured.name|truncatechars:30 }}</strong></p>
+                              </div>
+                        </a>
+                  </div>
+
+            </div>
+
+
+            {% endfor %}
+
+      </div>
 </div>
+
 {% endblock %}

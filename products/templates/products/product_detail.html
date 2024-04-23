@@ -3,11 +3,11 @@
 
 {% block product_content %}
 
-<div class="container-fluid">
-    <div class="row d-flex justify-content-center">
+<div class="container-fluid d-flex align-items-center">
+    <div class="row justify-content-center align-items-center">
 
-        <div class="col-sm-12 col-lg-6 m-1">
-            <div class="d-flex flex-column justify-content-center align-items-center">
+        <div class="col-sm-12 col-lg-6 mt-4">
+            <div class="flex-column">
 
                 {% if product.image %}
 
@@ -46,15 +46,23 @@
 
                     {% endif %}
 
-                    <p><strong>Quick search: </strong>
+                    <p><strong>Quick search: </strong></p>
+
+                    <div class="d-flex flex-wrap">
 
                         {% for tag in tags %}
 
-                        <a href="#" class="tag-link-style">{{ tag }} </a>
+                        <form role="search" method="GET" action="{% url 'products' %}">
+                            <input
+                              class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search"/>
+                            <button
+                              class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ tag }}
+                            </button>
+                          </form>
 
                         {% endfor %}
 
-                    </p>
+                    </div>
                 </div>
             </div>
         </div>
