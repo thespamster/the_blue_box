@@ -233,7 +233,7 @@ a {
 .tag-btn-style:active {
     background-color: rgba(0, 59, 111, 1) !important; /* !important to override Bootstrap default */
     border: 1px solid rgba(0, 59, 111, 0.5);
-    width: 5rem;
+    width: 4rem;
     padding: 0;
     margin: 2px;
 }

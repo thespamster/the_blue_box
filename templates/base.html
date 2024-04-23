@@ -41,7 +41,6 @@
   </head>
   <body>
     
-
     <!-- Bootstrap5.3.3 navbar customised -->
     <header>
       <div class="container-fluid py-2 mx-0 w-100 g-0">
@@ -67,7 +66,7 @@
                   <a class="nav-link" aria-current="page" href="{% url 'home_page:home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'products' %}"
+                  <a class="nav-link" type="button" data-bs-toggle="offcanvas" aria-current="page" href="#shopCategories"
                     >Shop</a
                   >
                 </li>
@@ -140,6 +139,33 @@
         </nav>
       </div>
     </header>
+
+    <!-- Bootstrap off canvas menu with custom CSS styling -->
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="shopCategories" aria-labelledby="offcanvasLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasLabel">Blue Box Shop</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        
+        <p><a href="{% url 'products' %}">SHOP ALL</a></p>
+
+        <p>Categories</p>
+
+        {% for cat in categories %}
+
+        <form role="search" method="GET" action="{% url 'products' %}?category">
+          <input
+            class="form-control" type="hidden" name="q" value="{{ cat.display_name }}" aria-label="Search"/>
+          <button
+            class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ cat.display_name }}
+          </button>
+        </form>
+        
+        {% endfor %}
+
+      </div>
+    </div>
 
   <div class="main-div d-flex">
 
