@@ -46,7 +46,7 @@
       <div class="container-fluid py-2 mx-0 w-100 g-0">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
           <div class="container-fluid navbar-color-style">
-            <a class="navbar-brand" href="#"
+            <a class="navbar-brand a-style" href="#"
               ><img src="{% static 'img/tardis.png' %}" id="navbar-icon"
             /></a>
             <button
@@ -63,24 +63,24 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="{% url 'home_page:home' %}">Home</a>
+                  <a class="nav-link a-style" aria-current="page" href="{% url 'home_page:home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" type="button" data-bs-toggle="offcanvas" aria-current="page" href="#shopCategories"
+                  <a class="nav-link a-style" type="button" data-bs-toggle="offcanvas" aria-current="page" href="#shopCategories"
                     >Shop</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#"
+                  <a class="nav-link a-style" aria-current="page" href="#"
                     >Message Boards</a
                   >
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" aria-current="page" href="#">Fan Art</a>
+                  <a class="nav-link a-style" aria-current="page" href="#">Fan Art</a>
                 </li>
 
                 <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <a class="nav-link dropdown-toggle a-style" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                     My Account
                   </a>
                   <ul class="dropdown-menu" aria-labelledby="user-options">
@@ -89,24 +89,24 @@
 
                         {% if request.user.is_superuser %}
 
-                            <li><a class="dropdown-item" href="">Admin</a></li>
+                            <li><a class="dropdown-item a-style" href="">Admin</a></li>
 
                         {% endif %}
 
-                        <li><a class="dropdown-item" href="#">My Profile</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a></li>
+                        <li><a class="dropdown-item a-style" href="#">My Profile</a></li>
+                        <li><a class="dropdown-item a-style" href="{% url 'account_logout' %}">Logout</a></li>
 
                     {% else %}
 
-                        <li><a class="dropdown-item" href="{% url 'account_signup' %}">Create Account</a></li>
-                        <li><a class="dropdown-item" href="{% url 'account_login' %}">Login</a></li>   
+                        <li><a class="dropdown-item a-style" href="{% url 'account_signup' %}">Create Account</a></li>
+                        <li><a class="dropdown-item a-style" href="{% url 'account_login' %}">Login</a></li>   
 
                     {% endif %}
                     
                   </ul>
                 </li>
                 <li class="nav-item align-self-center ps-lg-5 pt-2 pt-lg-1 d-flex">
-                  <a href="#">
+                  <a href="#" class="a-style">
                     <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap">
                   </a>
                   <span class="badge text-bg-danger">
@@ -122,7 +122,7 @@
                     {% endif %}
 
                   </span>
-                  </a>
+                 
                 </li>
 
               </ul>
@@ -143,26 +143,27 @@
     <!-- Bootstrap off canvas menu with custom CSS styling -->
     <div class="offcanvas offcanvas-start" tabindex="-1" id="shopCategories" aria-labelledby="offcanvasLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasLabel">Blue Box Shop</h5>
+        <h5 class="offcanvas-title" id="offcanvasLabel" class="offcanvas-text-style offcanvas-text-style-header">Blue Box Shop</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
       <div class="offcanvas-body">
         
-        <p><a href="{% url 'products' %}">SHOP ALL</a></p>
+        <p class="text-center"><a href="{% url 'products' %}" class="btn btn-lg btn-outline-primary shop-button-style">SHOP ALL</a></p>
+        <p class="text-center offcanvas-text-style">or</p>
 
-        <p>Categories</p>
+        <p class="text-center offcanvas-text-style"><strong>Categories</strong></p>
+
+        <div class="d-flex flex-column align-items-center">
 
         {% for cat in categories %}
+        <div>
 
-        <form role="search" method="GET" action="{% url 'products' %}?category">
-          <input
-            class="form-control" type="hidden" name="q" value="{{ cat.display_name }}" aria-label="Search"/>
-          <button
-            class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ cat.display_name }}
-          </button>
-        </form>
-        
+          <a href="{% url 'products' %}?category={{ cat.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">{{ cat.display_name }}</a>
+
+      </div>
         {% endfor %}
+        
+        </div>
 
       </div>
     </div>

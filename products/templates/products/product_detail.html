@@ -11,14 +11,14 @@
 
                 {% if product.image %}
 
-                <div><a href="#">
+                <div><a href="#" class="a-style">
                         <img src="{{ product.image_url }}" class="card-img-top product-detail-image-style img-fluid"
                             alt="{{ product.name }}">
                     </a></div>
 
                 {% else %}
 
-                <a href="#">
+                <a href="#" class="a-style">
                     <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-detail-image-style img-fluid"
                         alt="{{ product.name }}">
                 </a>

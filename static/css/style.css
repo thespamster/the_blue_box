@@ -205,7 +205,7 @@ body {
 
 /* Change the look of href link elements */
 
-a {
+.a-style {
     text-decoration: none;
     color: black;
     font-family: "Roboto", sans-serif;
@@ -215,30 +215,58 @@ a {
 /* Change the look of the Bootstrap form tag elements */
 
 .tag-btn-style {
-    color: rgba(0, 59, 111, 1);
-    width: 5rem;
-    border: 1px solid rgba(0, 59, 111, 0.5);
+    color: black;
+    border: 0;
+    border-radius: 0;
+    width: 10rem;
     padding: 0;
     margin: 2px;
+    font-family: "Roboto", sans-serif;
 }
 
 .tag-btn-style:hover {
-    background-color: rgba(0, 59, 111, 1);
-    border: 1px solid rgba(0, 59, 111, 0.5);
-    width: 5rem;
-    padding: 0;
-    margin: 2px;
+    background-color: rgba(0, 59, 111, 0.50) !important; /* !important to override Bootstrap default */
+    border: 0;
+    color: white;
 }
 
 .tag-btn-style:active {
     background-color: rgba(0, 59, 111, 1) !important; /* !important to override Bootstrap default */
-    border: 1px solid rgba(0, 59, 111, 0.5);
-    width: 4rem;
-    padding: 0;
-    margin: 2px;
 }
 
+.shop-button-style {
+    color: black;
+    border: 0;
+    border-radius: 0;
+    width: 10rem;
+    padding: 0;
+    margin: 2px;
+    font-family: "Roboto", sans-serif;
+}
 
+.shop-button-style:hover {
+    background-color: rgba(0, 59, 111, 0.40) !important; /* !important to override Bootstrap default */
+    border: 0;
+    color: white;
+    
+}
+
+.shop-button-style:active {
+    background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
+}
+
+.offcanvas-body {
+    background-color: rgba(0, 59, 111, 0.25);
+}
+
+.offcanvas-text-style-header {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.offcanvas-text-style {
+    font-family: "Roboto", sans-serif;
+}
 
 
 
