@@ -10,6 +10,8 @@ def all_products(request):
 
     products = Product.objects.all()
     categories = Category.objects.all()
+
+     
     
     query = None
 

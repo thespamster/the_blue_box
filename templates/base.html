@@ -122,9 +122,7 @@
                     {% endif %}
 
                   </span>
-                 
                 </li>
-
               </ul>
               <form class="d-flex" role="search" method="GET" action="{% url 'products' %}">
                 <input
@@ -149,21 +147,40 @@
       <div class="offcanvas-body">
         
         <p class="text-center"><a href="{% url 'products' %}" class="btn btn-lg btn-outline-primary shop-button-style">SHOP ALL</a></p>
-        <p class="text-center offcanvas-text-style">or</p>
+        <p class="text-center offcanvas-text-style">OR</p>
 
-        <p class="text-center offcanvas-text-style"><strong>Categories</strong></p>
+        <p class="text-center offcanvas-text-style"><strong>shop by Categories</strong></p>
 
         <div class="d-flex flex-column align-items-center">
 
         {% for cat in categories %}
+
         <div>
 
           <a href="{% url 'products' %}?category={{ cat.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">{{ cat.display_name }}</a>
 
-      </div>
+        </div>
+
         {% endfor %}
         
         </div>
+
+        <p class="text-center offcanvas-text-style mt-2">OR</p>
+        <p class="text-center offcanvas-text-style"><strong>go full nerd and search by Doctor</strong></p>
+
+        <div class="d-flex flex-column align-items-center">
+
+          {% for doctor in doctors %}
+  
+          <div>
+  
+            <a href="{% url 'products' %}?q={{ doctor }}" class="btn btn-sm btn-outline-primary tag-btn-style">{{ doctor }}</a>
+  
+          </div>
+  
+          {% endfor %}
+          
+          </div>
 
       </div>
     </div>
