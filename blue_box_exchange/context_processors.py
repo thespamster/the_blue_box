@@ -9,7 +9,7 @@ def add_variable_to_context(request):
     doctors = [
         "William Hartnell", "Patrick Troughton",
         "Jon Pertwee", "Tom Baker", "Peter Davison",
-        "Colin Baker", "Sylvester McCoy", "Paul McGann",
+        "Colin Baker", "Sylvester McCoy", "Paul McGann", "John Hurt",
         "Christopher Eccleston", "David Tennant", "Matt Smith",
         "Peter Capaldi", "Jodie Whittaker", "Ncuti Gatwa"
     ]  
