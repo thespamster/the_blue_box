@@ -15,8 +15,8 @@ class Category(models.Model):
     
     def get_display_name(self):
         return self.display_name
-    
-    
+
+
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     ean = models.CharField(max_length=254, null=True, blank=True)

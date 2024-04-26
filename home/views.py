@@ -7,7 +7,7 @@ import random
 def index(request):
     ''' Render the home page '''
 
-    ''' get 6 random products for a featured section on the home page '''
+    ''' get 2 random products for a featured section on the home page '''
 
     products = Product.objects.all()
     quantity = Product.objects.count()
