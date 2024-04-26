@@ -1,11 +1,13 @@
 /* Custom styling for base.html */
 
-/* navbar color and style */
+/* tardis icon sizing */
 
 #navbar-icon {
     width: 45px;
     height: 45px;
 }
+
+/* CSS to change search box and button style */
 
 .search-btn-style {
     border-radius: 5px;
@@ -13,6 +15,20 @@
     border: 1px solid rgba(0, 59, 111, 0.5);
     color: white;
     background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
+    border: 0;
+}
+
+.search-btn-style1 {
+    border-radius: 0 !important; /* !important to override Bootstrap default */
+    width: 4rem;
+    border: 1px solid rgba(0, 59, 111, 0.5);
+    color: white;
+    background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
+    border: 0;
+}
+
+.navbar-search-style1 {
+    border-radius: 0;
     border: 0;
 }
 
@@ -136,6 +152,12 @@ body {
 
 .bs-icon-style {
     filter: invert(15%) sepia(74%) saturate(1867%) hue-rotate(192deg) brightness(89%) contrast(103%);
+    width: 32px;
+    height: 32px;
+}
+
+.bs-icon-style1 {
+    filter: invert(86%) sepia(100%) saturate(1%) hue-rotate(178deg) brightness(104%) contrast(101%);
     width: 32px;
     height: 32px;
 

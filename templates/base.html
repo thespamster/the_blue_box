@@ -129,7 +129,7 @@
                   class="form-control me-2 navbar-search-style" type="text" name="q" placeholder="Search the shop" aria-label="Search"/>
                 <button
                   class="form-control btn btn-sm btn-primary search-btn-style" type="submit">
-                  <i class="fa-solid fa-magnifying-glass"></i>
+                  <img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/search.svg' %}">
                 </button>
               </form>
             </div>
@@ -181,6 +181,14 @@
           {% endfor %}
           
           </div>
+          <form class="d-flex pt-5" role="search" method="GET" action="{% url 'products' %}">
+            <input
+              class="form-control me-2 navbar-search-style1" type="text" name="q" placeholder="Search the shop" aria-label="Search"/>
+            <button
+              class="form-control btn btn-sm btn-primary search-btn-style1" type="submit">
+              <img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/search.svg' %}">
+            </button>
+          </form>
 
       </div>
     </div>
