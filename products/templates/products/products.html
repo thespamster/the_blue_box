@@ -18,16 +18,12 @@
                 <div class="d-flex justify-content-center">
 
                 {% if product.image %}
-
                 
                     <img src="{{ product.image_url }}" class="card-img-top product-image-style mx-auto" alt="{{ product.name }}">
                 
-
                 {% else %}
-
                 
                     <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-image-style mx-auto" alt="{{ product.name }}">
-             
 
                 {% endif %}
 
@@ -41,7 +37,6 @@
             </div>
         
         </div>
-   
 
         {% endfor %}
 

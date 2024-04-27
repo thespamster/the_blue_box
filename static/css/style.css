@@ -225,6 +225,45 @@ body {
     border: 0;
 }
 
+/* Change the look of the Bootstrap dropdown menu button */
+
+.sort-btn-style {
+    background-color: rgba(0, 59, 111, 0);
+    color: black;
+    border-radius: 5px;
+    border: 0;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.sort-btn-style:hover {
+    background-color: rgba(0, 59, 111, 0);
+    color: black;
+    border-radius: 5px;
+    border: 0;
+}
+
+.sort-btn-style:active {
+    background-color: rgba(0, 59, 111, 0) !important; /* !important to override Bootstrap default */
+    color: black !important; /* !important to override Bootstrap default */
+    border-radius: 5px;
+    border: 0;
+}
+
+.dropdown-item-style {
+    background-color: rgba(0, 59, 111, 0);
+    color: black;
+    border-radius: 0;
+    border: 0;
+}
+
+.dropdown-item-style:hover {
+    background-color: rgba(0, 59, 111, 0.25);
+    color: black;
+    border-radius: 0;
+    border: 0;
+}
+
 /* Change the look of href link elements */
 
 .a-style {

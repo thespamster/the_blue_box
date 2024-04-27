@@ -147,9 +147,8 @@
       <div class="offcanvas-body">
         
         <p class="text-center"><a href="{% url 'products' %}" class="btn btn-lg btn-outline-primary shop-button-style">SHOP ALL</a></p>
-        <p class="text-center offcanvas-text-style">OR</p>
 
-        <p class="text-center offcanvas-text-style"><strong>shop by Categories</strong></p>
+        <p class="text-center offcanvas-text-style pt-2"><strong>OR shop by Categories</strong></p>
 
         <div class="d-flex flex-column align-items-center">
 
@@ -164,9 +163,7 @@
         {% endfor %}
         
         </div>
-
-        <p class="text-center offcanvas-text-style mt-2">OR</p>
-        <p class="text-center offcanvas-text-style"><strong>go full nerd and search by Doctor</strong></p>
+        <p class="text-center offcanvas-text-style pt-2"><strong>OR go full nerd and search by Doctor</strong></p>
 
         <div class="d-flex flex-column align-items-center">
 
@@ -179,6 +176,13 @@
           </div>
   
           {% endfor %}
+
+          
+        <p class="text-center offcanvas-text-style pt-2"><strong>OR search by price</strong></p>
+            <a href="{% url 'products' %}?price=10" class="tag-btn-style a-style text-center">upto £10</a>
+            <a href="{% url 'products' %}?price=50" class="tag-btn-style  a-style text-center">upto £50</a>
+            <a href="{% url 'products' %}?price=100" class="tag-btn-style  a-style text-center">upto £100</a>
+            <a href="{% url 'products' %}?price=101" class="tag-btn-style a-style text-center">over £100</a>
           
           </div>
           <form class="d-flex pt-5" role="search" method="GET" action="{% url 'products' %}">
@@ -189,6 +193,8 @@
               <img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/search.svg' %}">
             </button>
           </form>
+
+          
 
       </div>
     </div>
