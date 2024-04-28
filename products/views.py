@@ -15,17 +15,25 @@ def all_products(request):
 
     if request.GET:
 
+        if 'rating' in request.GET:
+            query = request.GET['rating']
+            if not query:
+                messages.error(request, "No rating search criteria!")
+                return redirect(reverse('products'))
+            queries = query.split('-')
+            products = products.filter(rating__range=(int(queries[0]), int(queries[1])))
+
         if 'price' in request.GET:
             query = request.GET['price']
             if not query:
                 messages.error(request, "No price search criteria!")
                 return redirect(reverse('products'))
-            
-            if query == '101':
+            queries = query.split('-')
+            if queries[1] == '101':
                 query = 100
-                products = products.filter(price__gte=query).order_by('price')
+                products = products.filter(price__gte=query)
             else:
-                products = products.filter(price__lte=query).order_by('price')
+                products = products.filter(price__range=(queries[0], queries[1]))
 
         if 'category' in request.GET:
             query = request.GET['category']
@@ -35,7 +43,7 @@ def all_products(request):
             
             queries = categories.filter(name=query)
             queries = queries[slice(0,1)]
-            products = products.filter(category=queries).order_by('price')
+            products = products.filter(category=queries)
 
         if 'q' in request.GET:
             query = request.GET['q']
@@ -44,7 +52,7 @@ def all_products(request):
                 return redirect(reverse('products'))
 
             queries = Q(name__icontains=query) | Q(description__icontains=query) | Q(tags__icontains=query)
-            products = products.filter(queries).order_by('price')
+            products = products.filter(queries)   
 
     context = {
         'products': products,

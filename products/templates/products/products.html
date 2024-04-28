@@ -11,10 +11,11 @@
         <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1">
             
             <div class="card card-style">
-                <a href="{% url 'product_detail' product.id %}" class="a-style">
+                
                 <div class="card-header mb-1 text-center">
-                    {{ product.category.display_name }}
+                    <a href="{% url 'products' %}?category={{ product.category.name }}" title="category search" class="a-style">{{ product.category.display_name }}</a>
                 </div>
+                <a href="{% url 'product_detail' product.id %}" class="a-style">
                 <div class="d-flex justify-content-center">
 
                 {% if product.image %}

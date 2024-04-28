@@ -107,7 +107,7 @@
                   </ul>
                 </li>
                 <li class="nav-item align-self-center ps-lg-5 pt-2 pt-lg-1 d-flex">
-                  <a href="#" class="a-style">
+                  <a href="#" class="a-style" title="shopping trolley">
                     <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap">
                   </a>
                   <span class="badge text-bg-danger">
@@ -129,7 +129,7 @@
                 <input
                   class="form-control me-2 navbar-search-style" type="text" name="q" placeholder="Search the shop" aria-label="Search"/>
                 <button
-                  class="form-control btn btn-sm btn-primary search-btn-style" type="submit">
+                  class="form-control btn btn-sm btn-primary search-btn-style" title="search" type="submit">
                   <img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/search.svg' %}">
                 </button>
               </form>
@@ -149,7 +149,7 @@
         
         <p class="text-center"><a href="{% url 'products' %}" class="btn btn-lg btn-outline-primary shop-button-style">SHOP ALL</a></p>
 
-        <p class="text-center offcanvas-text-style pt-2"><strong>OR shop by Categories</strong></p>
+        <p class="text-center offcanvas-text-style pt-1"><strong>Shop by Categories</strong></p>
 
         <div class="d-flex flex-column align-items-center">
 
@@ -164,7 +164,7 @@
         {% endfor %}
         
         </div>
-        <p class="text-center offcanvas-text-style pt-2"><strong>OR go full nerd and search by Doctor</strong></p>
+        <p class="text-center offcanvas-text-style pt-4"><strong>Go full nerd and search by Doctor</strong></p>
 
         <div class="d-flex flex-column align-items-center">
 
@@ -179,18 +179,42 @@
           {% endfor %}
 
           
-        <p class="text-center offcanvas-text-style pt-2"><strong>OR search by price</strong></p>
-            <a href="{% url 'products' %}?price=10" class="tag-btn-style a-style text-center">upto £10</a>
-            <a href="{% url 'products' %}?price=50" class="tag-btn-style  a-style text-center">upto £50</a>
-            <a href="{% url 'products' %}?price=100" class="tag-btn-style  a-style text-center">upto £100</a>
-            <a href="{% url 'products' %}?price=101" class="tag-btn-style a-style text-center">over £100</a>
-          
+          <p class="text-center offcanvas-text-style pt-4"><strong>Search by price</strong></p>
+          <a href="{% url 'products' %}?price=0-10" class="tag-btn-style a-style text-center">upto £10</a>
+          <a href="{% url 'products' %}?price=10-50" class="tag-btn-style  a-style text-center">£10 - £50</a>
+          <a href="{% url 'products' %}?price=50-100" class="tag-btn-style  a-style text-center">£50 - £100</a>
+          <a href="{% url 'products' %}?price=100-101" class="tag-btn-style a-style text-center">over £100</a>
+
+          <p class="text-center offcanvas-text-style pt-4"><strong>Search by rating</strong></p>
+          <div class="text-center">
+          <a href="{% url 'products' %}?rating=0-1" class="tag-btn-style a-style "><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"></a> / 
+          <a href="{% url 'products' %}?rating=1-2" class="tag-btn-style  a-style"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"></a> /
+          <a href="{% url 'products' %}?rating=2-3" class="tag-btn-style  a-style"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"></a> /
+          <a href="{% url 'products' %}?rating=3-4" class="tag-btn-style a-style"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"></a> /
+          <a href="{% url 'products' %}?rating=4-5" class="tag-btn-style a-style"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"><img class="pb-1 rating-star-size"
+            src="{% static 'img/bootstrap_icons/star.svg' %}"></a>
+          </div>
+              
           </div>
           <form class="d-flex pt-5" role="search" method="GET" action="{% url 'products' %}">
             <input
               class="form-control me-2 navbar-search-style1" type="text" name="q" placeholder="Search the shop" aria-label="Search"/>
             <button
-              class="form-control btn btn-sm btn-primary search-btn-style1" type="submit">
+              class="form-control btn btn-sm btn-primary search-btn-style1" title="search" type="submit">
               <img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/search.svg' %}">
             </button>
           </form>
@@ -211,6 +235,12 @@
     {% block product_content %} {%endblock %}
 
     <button id="topButton" title="Back to top"><img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/arrow-up-circle-fill.svg' %}"></button>
+    
+    {% if search_term != None %}
+
+    <a href="{% url 'products' %}" id="backButton" title="Back to all items"><img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/arrow-left-circle-fill.svg' %}"></a>
+
+    {% endif %}
 
   </div>   
   <footer>

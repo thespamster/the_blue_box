@@ -52,7 +52,7 @@
 
                         {% for tag in tags %}
 
-                        <form role="search" method="GET" action="{% url 'products' %}">
+                        <form role="search" class="pb-2" method="GET" action="{% url 'products' %}">
                             <input
                               class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search"/>
                             <button

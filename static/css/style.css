@@ -160,7 +160,6 @@ body {
     filter: invert(86%) sepia(100%) saturate(1%) hue-rotate(178deg) brightness(104%) contrast(101%);
     width: 32px;
     height: 32px;
-
 }
 
 /* CSS to change the look of Bootstrap cards used to display products */
@@ -354,4 +353,22 @@ body {
     
     width: 48px;
     height: 48px;
+}
+
+#backButton {
+    position: fixed;
+    top: 370px;
+    left: 25px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: rgba(0, 59, 111, 0.4);
+    color: black;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+#backButton:hover {
+    background-color: rgba(0, 59, 111, 0.8); /* Add a dark-grey background on hover */
 }
