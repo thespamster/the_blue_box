@@ -9,7 +9,7 @@ from django.urls import reverse
 def all_products(request):
     ''' A view to show all products, including sorting and search queries '''
 
-    products = Product.objects.all()
+    products = Product.objects.all().order_by('price')
     categories = Category.objects.all()
     query = None
 
