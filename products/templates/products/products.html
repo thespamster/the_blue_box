@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}- Shop{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid">
@@ -30,9 +32,9 @@
 
                 </div>
                 <div class="card-body">
-                    <p class="card-text"><strong>{{ product.name|truncatechars:60 }}</strong></p>
+                    <p class="card-text fw-bold">{{ product.name|truncatechars:60 }}</p>
                     <p class="card-text">{{ product.description|truncatechars:70 }}</p>
-                    <p class="card-text"><strong>£{{ product.price }}</strong></p>
+                    <p class="card-text fw-bold">£{{ product.price }}</p>
                 </div>
             </a>
             </div>

@@ -1,20 +1,64 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}- Cart{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-        <div class="col-12">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-xl-6">
+            <h2>In Your Cart</h2>
+
             {% if cart_items %}
 
-                {{ cart_items }}
+            <table class="table">
+
+                {% for item in cart_items %}
+
+                <tbody class="table-style">
+                    <tr>
+                        <th scope="row"></th>
+                        <td><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
+                        <td class="text-start table-data-style">{{ item.product }}</td>
+                        <td class="table-data-style">{{ item.quantity }}</td>
+                        <td class="text-end table-data-style">£{{ item.product.price }}</td>
+                        <td><img class="bs-bin-style mb-1" src="{% static 'img/bootstrap_icons/trash3.svg' %}"
+                                alt="Bootstrap trash3 icon">
+                            </a></td>
+                    </tr>
+
+
+                    {% endfor %}
+
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td class="text-center fw-bold table-data-style">{{ product_count }} Items in cart</td>
+                        <td class="text-end fw-bold table-data-style">Total Price</td>
+                        <td class="fw-bold table-data-style">
+                            {% if total_cost %}
+
+                            £{{ total_cost|floatformat:2 }}
+
+                            {% else %}
+
+                            £0.00
+
+                            {% endif %}
+                        </td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
 
             {% else %}
 
-                <p>You're cart is empty</p>
+            <p class="fw-bold table-data-style">You're cart is empty</p>
 
             {% endif %}
+
+            </div>
         </div>
     </div>
 </div>

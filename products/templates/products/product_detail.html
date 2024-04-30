@@ -1,6 +1,8 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_title %}- Item{% endblock %}
+
 {% block content %}
 
 <div class="container-fluid d-flex align-items-center">
@@ -12,28 +14,30 @@
                 {% if product.image %}
 
                 <div>
-                    <img src="{{ product.image_url }}" class="card-img-top product-detail-image-style img-fluid z-3 position-relative"
-                    alt="{{ product.name }}">
+                    <img src="{{ product.image_url }}"
+                        class="card-img-top product-detail-image-style img-fluid z-3 position-relative"
+                        alt="{{ product.name }}">
                 </div>
 
                 {% else %}
 
-                    <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-detail-image-style img-fluid z-3 position-relative"
-                        alt="{{ product.name }}">
+                <img src="{{ MEDIA_URL }} no_image.webp"
+                    class="card-img-top product-detail-image-style img-fluid z-3 position-relative"
+                    alt="{{ product.name }}">
 
                 {% endif %}
 
                 <p>(hover over image to enlarge)</p>
             </div>
         </div>
-        
+
         <div class="col-sm-12 col-lg-4 m-1 d-flex align-items-center product-detail-text-style pt-2">
             <div class="card-body">
-                
-                <p class="card-text text-style text-start"><strong>{{ product.name }}</strong></p>
+
+                <p class="card-text text-style text-start fw-bold">{{ product.name }}</p>
                 <p class="card-text text-style fw-light text-start">{{ product.description }}</p>
                 <div class="card-text">
-                    <p class="card-text text-style"><strong>£{{ product.price }}</strong></p>
+                    <p class="card-text text-style fw-bold">£{{ product.price }}</p>
 
                     {% if product.rating %}
 
@@ -46,39 +50,38 @@
 
                     {% endif %}
 
-                    <p><strong>Quick search: </strong></p>
-
+                    <p class="fw-bold">Quick search: </p>
                     <div class="d-flex flex-wrap">
 
                         {% for tag in tags %}
 
                         <form role="search" class="pb-2" method="GET" action="{% url 'products' %}">
-                            <input
-                                class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search"/>
-                            <button
-                                class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ tag }}
+                            <input class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search" />
+                            <button class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ tag }}
                             </button>
                         </form>
 
                         {% endfor %}
 
                     </div>
-                    <p class="card-text text-start"><strong>Back to category: </strong><a href="{% url 'products' %}?category={{ product.category.name }}" class="a-style"><span class="tag-btn-style">{{ product.category.display_name }}</span></a></p>
-
+                    <p class="card-text text-start fw-bold">Back to category: <a
+                            href="{% url 'products' %}?category={{ product.category.name }}" class="a-style"><span
+                                class="tag-btn-style">{{ product.category.display_name }}</span></a></p>
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
                         {% csrf_token %}
                         <div class="form-row">
                             <div class="col-12">
-                                <p class="mt-3"><strong>Quantity:</strong></p>
+                                <p class="mt-3 fw-bold">Quantity:</p>
                                 <div class="form-group w-50">
                                     <div class="input-group">
-                                        <input class="form-control qty_input quantity-style z-1 position-relative" type="number" name="quantity" value="1" min="1" max="99" data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
+                                        <input class="form-control qty_input quantity-style z-1 position-relative"
+                                            type="number" name="quantity" value="1" min="1" max="99"
+                                            data-item_id="{{ product.id }}" id="id_qty_{{ product.id }}">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-12 mb-2">
                                 <a href="{% url 'products' %}" class="btn btn-keep-shopping mt-5">
-                                    
                                     <span>Keep Shopping</span>
                                 </a>
                                 <input type="submit" class="btn btn-add-to-cart mt-5" value="Add to Cart">
@@ -86,7 +89,6 @@
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>

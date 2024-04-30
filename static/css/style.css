@@ -162,6 +162,15 @@ body {
     height: 32px;
 }
 
+.fade-in {
+    animation: fadeIn 1.25s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
 /* CSS to change the look of Bootstrap cards used to display products */
 
 .product-image-style {
@@ -383,4 +392,27 @@ body {
 
 #backButton:hover {
     background-color: rgba(0, 59, 111, 0.8); /* Add a dark-grey background on hover */
+}
+
+/* CSS to style products and icons in shopping cart */
+
+.cart-image-style {
+    width: 24px;
+    height: 24px;
+}
+
+.bs-bin-style {
+    filter: invert(11%) sepia(84%) saturate(6192%) hue-rotate(358deg) brightness(112%) contrast(110%);
+    width: 20px;
+    height: 20px;
+}
+
+/* CSS to style the checkout page */
+
+.table-style {
+    border-radius: 5px;
+}
+
+.table-data-style {
+    font-family: "Roboto", sans-serif;
 }

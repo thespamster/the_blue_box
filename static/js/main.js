@@ -8,7 +8,8 @@ $("#topButton").click(function() {
 
 function scrollFunction() {
   if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-    topButton.style.display = "block";
+      $("#topButton").css("display", "block");
+      
   } else {
     topButton.style.display = "none";
   }
