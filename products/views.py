@@ -66,12 +66,11 @@ def product_detail(request, product_id):
     ''' A view to show a products info '''
 
     product = get_object_or_404(Product, pk=product_id)
-
+    query = product_id
     context = {
         'product': product,
         'tags': product.tags.split(','),
+        'search_term': query,
     }
-
-    
 
     return render(request, 'products/product_detail.html', context)

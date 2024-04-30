@@ -11,25 +11,25 @@
 
                 {% if product.image %}
 
-                <div><a href="#" class="a-style">
-                        <img src="{{ product.image_url }}" class="card-img-top product-detail-image-style img-fluid"
-                            alt="{{ product.name }}">
-                    </a></div>
+                <div>
+                    <img src="{{ product.image_url }}" class="card-img-top product-detail-image-style img-fluid"
+                    alt="{{ product.name }}">
+                </div>
 
                 {% else %}
 
-                <a href="#" class="a-style">
                     <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-detail-image-style img-fluid"
                         alt="{{ product.name }}">
-                </a>
 
                 {% endif %}
 
                 <p>(hover over image to enlarge)</p>
             </div>
         </div>
+        
         <div class="col-sm-12 col-lg-4 m-1 d-flex align-items-center product-detail-text-style pt-2">
             <div class="card-body">
+                
                 <p class="card-text text-style text-start"><strong>{{ product.name }}</strong></p>
                 <p class="card-text text-style fw-light text-start">{{ product.description }}</p>
                 <div class="card-text">
@@ -54,15 +54,16 @@
 
                         <form role="search" class="pb-2" method="GET" action="{% url 'products' %}">
                             <input
-                              class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search"/>
+                                class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search"/>
                             <button
-                              class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ tag }}
+                                class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ tag }}
                             </button>
-                          </form>
+                        </form>
 
                         {% endfor %}
 
                     </div>
+                    <p class="card-text text-start"><strong>Back to category: </strong><a href="{% url 'products' %}?category={{ product.category.name }}" class="a-style"><span class="tag-btn-style">{{ product.category.display_name }}</span></a></p>
                 </div>
             </div>
         </div>

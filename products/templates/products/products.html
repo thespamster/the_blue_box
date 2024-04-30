@@ -13,7 +13,7 @@
             <div class="card card-style">
                 
                 <div class="card-header mb-1 text-center">
-                    <a href="{% url 'products' %}?category={{ product.category.name }}" title="category search" class="a-style">{{ product.category.display_name }}</a>
+                    <a href="{% url 'products' %}?category={{ product.category.name }}" title="Show {{ product.category.display_name }}" class="a-style">{{ product.category.display_name }}</a>
                 </div>
                 <a href="{% url 'product_detail' product.id %}" class="a-style">
                 <div class="d-flex justify-content-center">
