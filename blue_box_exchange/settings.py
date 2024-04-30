@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount.providers.apple',
     'home',
     'products',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -80,6 +81,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'blue_box_exchange.context_processors.add_variable_to_context',
+                'blue_box_exchange.context_processors.cart_contents',
             ],
         },
     },
@@ -188,6 +190,9 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = (os.path.join(BASE_DIR, 'media'))
+
+FREE_DELIVERY = 50
+STANDARD_DELIVERY_COST = 2.99
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

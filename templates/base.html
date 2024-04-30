@@ -107,7 +107,7 @@
                   </ul>
                 </li>
                 <li class="nav-item align-self-center ps-lg-5 pt-2 pt-lg-1 d-flex">
-                  <a href="#" class="a-style" title="shopping trolley">
+                  <a href="{% url 'view_cart' %}" class="a-style" title="shopping trolley">
                     <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap">
                   </a>
                   <span class="badge text-bg-danger">
@@ -229,10 +229,8 @@
     {% if messages %}
     
     {% endif %}
-    
-    {% block page_welcome %} {% endblock %}
 
-    {% block product_content %} {%endblock %}
+    {% block content %} {%endblock %}
 
     <button id="topButton" title="Back to top"><img class="bs-icon-style1" src="{% static 'img/bootstrap_icons/arrow-up-circle-fill.svg' %}"></button>
     
@@ -247,7 +245,7 @@
     <div class="container-fluid">
       <div class="row d-flex text-center align-items-center mt-2" id="free-delivery">
         <div class="col-12 ">
-          <h5>Free delivery on all orders over £{{ free_shipping }}</h5>
+          <h5>Free delivery on all orders over £{{ free_delivery }}</h5>
         </div>
 
       </div>
