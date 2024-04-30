@@ -198,7 +198,7 @@ body {
     cursor: default;
     transition-property: all; 
     transition-duration: 0.3s; 
-    transition-timing-function: ease; 
+    transition-timing-function: ease;
 }
 
 .product-detail-image-style:hover {
@@ -224,29 +224,41 @@ body {
     border: 0;
 }
 
-/* Change the look of the Bootstrap dropdown menu button */
+/* Change the look of the Bootstrap buttons for keep shopping, add to cart and quantity window */
 
-.sort-btn-style {
-    background-color: rgba(0, 59, 111, 0);
+.btn-keep-shopping {
+    background-color: rgb(255, 255, 255);
     color: black;
-    border-radius: 5px;
-    border: 0;
+    border-radius: 0;
+    border: 1px solid rgba(0, 59, 111, 0.8);
     font-family: "Roboto", sans-serif;
     font-weight: 400;
 }
 
-.sort-btn-style:hover {
-    background-color: rgba(0, 59, 111, 0);
+.btn-keep-shopping:hover {
+    background-color: rgba(0, 59, 111, 0.4);
     color: black;
-    border-radius: 5px;
-    border: 0;
+    border-radius: 0;
 }
 
-.sort-btn-style:active {
-    background-color: rgba(0, 59, 111, 0) !important; /* !important to override Bootstrap default */
-    color: black !important; /* !important to override Bootstrap default */
-    border-radius: 5px;
-    border: 0;
+.btn-add-to-cart {
+    background-color: rgba(0, 59, 111, 0.8);
+    color: white;
+    border-radius: 0;
+    border: 1px solid rgba(0, 59, 111, 0.8);
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.btn-add-to-cart:hover {
+    background-color: rgba(0, 59, 111, 0.4);
+    color: black;
+}
+
+.quantity-style {
+    border-radius: 0;
+    border: 1px solid rgba(0, 59, 111, 0.8);
+
 }
 
 .dropdown-item-style {

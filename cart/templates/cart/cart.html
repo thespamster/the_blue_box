@@ -3,6 +3,20 @@
 
 {% block content %}
 
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12">
+            {% if cart_items %}
 
+                {{ cart_items }}
+
+            {% else %}
+
+                <p>You're cart is empty</p>
+
+            {% endif %}
+        </div>
+    </div>
+</div>
 
 {% endblock %}
