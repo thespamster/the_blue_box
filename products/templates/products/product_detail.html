@@ -51,20 +51,22 @@
                     {% endif %}
 
                     <p class="fw-bold">Quick search: </p>
-                    <div class="d-flex flex-wrap">
+                        
 
                         {% for tag in tags %}
-
-                        <form role="search" class="pb-2" method="GET" action="{% url 'products' %}">
+                        <div class="d-flex justify-content-center">
+                        <form role="search" class="pb-1" method="GET" action="{% url 'products' %}">
                             <input class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search" />
-                            <button class="form-control btn btn-sm btn-outline-primary tag-btn-style" type="submit">{{ tag }}
+                            <button class="form-control btn btn-sm tag-btn-style" type="submit">{{ tag }}
                             </button>
                         </form>
+                        </div>
 
                         {% endfor %}
 
-                    </div>
-                    <p class="card-text text-start fw-bold">Back to category: <a
+                        
+                    
+                    <p class="card-text text-start fw-bold mt-2">Go to category: <a
                             href="{% url 'products' %}?category={{ product.category.name }}" class="a-style"><span
                                 class="tag-btn-style">{{ product.category.display_name }}</span></a></p>
                     <form class="form" action="{% url 'add_to_cart' product.id %}" method="POST">
@@ -84,6 +86,7 @@
                                 <a href="{% url 'products' %}" class="btn btn-keep-shopping mt-5">
                                     <span>Keep Shopping</span>
                                 </a>
+                                
                                 <input type="submit" class="btn btn-add-to-cart mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">

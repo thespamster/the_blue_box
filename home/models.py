@@ -7,6 +7,6 @@ class Doctors(models.Model):
 
     class Meta:
         verbose_name_plural = 'Doctors'
-   
+
     def __str__(self):
         return self.name
