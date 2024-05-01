@@ -1,6 +1,5 @@
-/* Custom styling for base.html */
 
-/* tardis icon sizing */
+/* CSS tardis icon sizing */
 
 #navbar-icon {
     width: 45px;
@@ -13,7 +12,6 @@
     border-radius: 5px;
     width: 4rem;
     border: 1px solid rgba(0, 59, 111, 0.5);
-    color: white;
     background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
     border: 0;
 }
@@ -22,7 +20,6 @@
     border-radius: 0 !important; /* !important to override Bootstrap default */
     width: 4rem;
     border: 1px solid rgba(0, 59, 111, 0.5);
-    color: white;
     background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
     border: 0;
 }
@@ -32,7 +29,7 @@
     border: 0;
 }
 
-/* CSS to change hamburger styling */
+/* CSS to style the hamburger in the navbar */
 
 .navbar-toggler{
     border: 0;
@@ -51,10 +48,10 @@
 
 .badge {
     height: 1.25rem;
-    margin-bottom: 1px;
+    margin-bottom: 1px;   
 }
 
-/* body style */
+/* CSS to style the body */
 
 body {
     min-height: 100vh;
@@ -75,7 +72,7 @@ body {
     min-height: 88dvh;
 }
 
-/* footer style */
+/* CSS to style the footer */
 
 .footer-style {
     background-color: rgba(0, 59, 111, 0.15);
@@ -84,7 +81,6 @@ body {
     padding: 1rem;
     font-style: "Roboto", sans-serif;
     font-weight: 500;
-    
 }
 
 #link-style {
@@ -98,7 +94,7 @@ body {
     font-weight: 400;
 }
 
-/* homepage styling */
+/* CSS to style the homepage */
 
 .alert-style {
     width: 100%;
@@ -130,13 +126,13 @@ body {
     opacity: 0.95;  
 }
 
-/* shopping cart styling */
+/* CSS to style the shopping cart */
 
 .cart-style {
     color: rgb(0, 59, 111);
 }
 
-/* delivery banner styling */
+/* CSS to style the delivery banner */
 
 #free-delivery {
     color: white;
@@ -144,10 +140,10 @@ body {
     background-color: rgba(0, 59, 111, 0.45);
 }
 
-/* icon styling */
+/* CSS to style the icons */
 
 .icon-style {
-    color: rgb(0, 59, 111) !important;
+    color: rgb(0, 59, 111) !important; /* !important to override Bootstrap default */
 }
 
 .bs-icon-style {
@@ -233,7 +229,7 @@ body {
     border: 0;
 }
 
-/* Change the look of the Bootstrap buttons for keep shopping, add to cart and quantity window */
+/* CSS to change the look of the Bootstrap buttons for keep shopping, add to cart and quantity window */
 
 .btn-keep-shopping {
     background-color: rgb(255, 255, 255);
@@ -284,7 +280,7 @@ body {
     border: 0;
 }
 
-/* Change the look of href link elements */
+/* CSS to change the look of <a> href link elements */
 
 .a-style {
     text-decoration: none;
@@ -293,7 +289,7 @@ body {
     font-weight: 400;
 }
 
-/* Change the look of the Bootstrap form tag elements */
+/* CSS to change the look of the Bootstrap form tag elements */
 
 .tag-btn-style {
     color: black;
@@ -336,6 +332,8 @@ body {
     background-color: rgba(0, 59, 111, 1.0) !important; /* !important to override Bootstrap default */
 }
 
+/* Change the look of the Bootstrap offcanvas elements */
+
 .offcanvas-body {
     background-color: rgba(0, 59, 111, 0.25);
 }
@@ -349,7 +347,14 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-/* Hover button style */
+.rating-style:hover {
+    cursor: pointer;
+    background-color: rgba(0, 59, 111, 0.45);
+}
+
+
+
+/* CSS to style the 'Back to Top' button */
 
 #topButton {
     display: none;
@@ -367,7 +372,7 @@ body {
 }
 
 #topButton:hover {
-    background-color: rgba(0, 59, 111, 0.8); /* Add a dark-grey background on hover */
+    background-color: rgba(0, 59, 111, 0.8); 
 }
 
 .bs-icon-style1 {
@@ -391,7 +396,7 @@ body {
 }
 
 #backButton:hover {
-    background-color: rgba(0, 59, 111, 0.8); /* Add a dark-grey background on hover */
+    background-color: rgba(0, 59, 111, 0.8);
 }
 
 /* CSS to style products and icons in shopping cart */
@@ -422,3 +427,34 @@ body {
     width: 24px;
     height: 24px;
 }
+
+.btn-checkout-style {
+    border-radius: 0px;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.btn-backto-shop {
+    border-radius: 0px;
+    background-color: rgba(0, 59, 111, 0.8); 
+    color: white;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.btn-backto-shop:hover {
+    border-radius: 0px;
+    background-color: rgba(0, 59, 111, 0.4); 
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
+.btn-backto-shop:active {
+    border-radius: 0px;
+    background-color: rgba(0, 59, 111, 0.8) !important; /* !important to override Bootstrap default */ 
+    color: white !important; /* !important to override Bootstrap default */
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+}
+
