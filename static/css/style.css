@@ -457,3 +457,24 @@ body {
     font-weight: 400;
 }
 
+/* CSS for under construction holding page */
+
+.under-construction-text {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    border: 2px solid rgba(0, 59, 111, 0.8);
+    height: 3rem;
+}
+
+.under-construction-text:hover {
+    font-family: "Roboto", sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    border-radius: 5px;
+    border: 2px solid green !important;
+    background-color: rgb(6, 223, 6);
+    color: white;
+    height: 3rem;
+}

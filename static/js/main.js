@@ -1,6 +1,6 @@
 console.log("main.js loaded"); // REMEMBER TO REMOVE THIS LINE
 
-// When the user scrolls down 100px from the top of the document, show the button
+// When the user scrolls down 250px from the top of the document, show the button
 $( window ).on( "scroll", function() {scrollFunction()});
 $("#topButton").click(function() {
     topFunction();
