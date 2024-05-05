@@ -25,10 +25,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-p0s!vs-e#5!#i4^0s-np2t(5&w-b9j@#)vph647qfd6o5cl0+a'
 
-# Add .env variables anywhere before SECRET_KEY
+# Add .env variables anywhere before social accounts details to enable login with google
 dotenv_file = os.path.join(BASE_DIR, ".env")
 if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
+
+CLIENT_ID = os.environ.get('CLIENT_ID')
+CLIENT_SECRET = os.environ.get('CLIENT_SECRET')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -53,7 +56,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     # ... include the providers you want to enable:
     'allauth.socialaccount.providers.google',
-    'allauth.socialaccount.providers.apple',
     'home',
     'products',
     'cart',
@@ -95,28 +97,18 @@ TEMPLATES = [
     },
 ]
 
-AUTHENTICATION_BACKENDS = [
-    
-    # Needed to login by username in Django admin, regardless of `allauth`
-    'django.contrib.auth.backends.ModelBackend',
-
-    # `allauth` specific authentication methods, such as login by email
-    'allauth.account.auth_backends.AuthenticationBackend',
-    
-]
-
 # Provider specific settings
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
-        # For each OAuth based provider, either add a ``SocialApp``
+        # For each OAuth based provider, add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
+        # credentials, and list them here:
         'SCOPE': [
             'profile',
             'email',
         ],
         'AUTH_PARAMS': {
-            'access_type': 'offline',
+            'access_type': 'online',
         },
         'OAUTH_PKCE_ENABLED': True,
     },
@@ -128,7 +120,7 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 
 
-SITE_ID = 1
+SITE_ID=1
 
 # temp reroute for emails so that they log to the console
 
@@ -141,6 +133,7 @@ ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = True
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
 LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 
 WSGI_APPLICATION = 'blue_box_exchange.wsgi.application'
 
@@ -206,3 +199,13 @@ STANDARD_DELIVERY_COST = 2.99
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTHENTICATION_BACKENDS = [
+    
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+
+    # `allauth` specific authentication methods, such as login by email
+    'allauth.account.auth_backends.AuthenticationBackend',
+    
+]
