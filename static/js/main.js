@@ -20,3 +20,10 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+// JS to style the allauth templates
+
+// Change style of account login page and Google login option
+$("#id_password_helptext a").text("Reset")
+$('label[for="id_login"]').css("display", "none")
+$('label[for="id_password"]').css("display", "none")

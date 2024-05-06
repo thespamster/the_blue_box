@@ -479,5 +479,17 @@ body {
     height: 3rem;
 }
 
+/* CSS for django allauth styles */
+
+.container-style {
+    height: 98dvh;
+}
+
+.google-style {
+    height: 48px;
+    width: 48px;
+
+}
+
 
 
