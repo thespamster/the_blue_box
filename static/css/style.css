@@ -478,3 +478,18 @@ body {
     color: white;
     height: 3rem;
 }
+
+/* CSS for all_auth pages */
+
+.all-auth-style {
+    background-color: rgba(0, 59, 111, 0.15);
+}
+
+.auth-a-style {
+    text-decoration: none;
+    color: black;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    width: 10rem;
+    border: 1px solid rgba(0, 59, 111, 0.8);
+}
