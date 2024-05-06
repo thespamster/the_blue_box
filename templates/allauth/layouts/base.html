@@ -48,12 +48,22 @@
             </div>
             {% block content %}
             {% endblock content %}
+            <div>
+                <div class="row">
+                    <div class="col-12 text-start">
+                        <a href="{% url 'products' %}" class="btn btn-keep-shopping mt-5">
+                            <span>Take me to the shop</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         {% endblock body %}
         {% block extra_body %}
         {% endblock extra_body %}
                 <div>
             </div>
         </div>
+        <img src="{% static 'img/tardis.png' %}" id="allauth-tardis" alt="Tardis Icon"></a>
 
         <script
         src="https://code.jquery.com/jquery-3.7.1.js"
