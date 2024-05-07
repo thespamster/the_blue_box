@@ -24,7 +24,7 @@ function topFunction() {
 // JS to style the allauth templates
 
 $('input').css('border', 'none')
-$('input').css('width', '15rem') 
+$('p > input').css('width', '25rem') // Targets just the all-auth forms
 $(":submit").css("padding", "5px") 
 $(":submit").addClass("btn-keep-shopping")
 

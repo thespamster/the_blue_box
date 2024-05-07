@@ -23,7 +23,7 @@
                         <td class="text-start align-middle table-data-style">{{ item.product }}</td>
                         <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
                             {% csrf_token %} 
-                        <td class="table-data-style align-middle"><input class="form-control qty_input quantity-style"
+                        <td class="table-data-style align-middle "><input class="form-control qty_input quantity-style"
                             type="number" name="quantity" value="{{ item.quantity }}" min="0" max="99"
                             data-item_id="{{ item.product.id }}" id="id_qty_{{ item.item_id }}"></td>
                         <td class="table-data-style align-middle"><button type="submit" class="btn" title="update quantity"><img class="update-icon-style mb-1" src="{% static 'img/bootstrap_icons/arrow-clockwise.svg' %}"

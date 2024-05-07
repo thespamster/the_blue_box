@@ -262,8 +262,8 @@ body {
 
 .quantity-style {
     border-radius: 0;
-    border: 1px solid rgba(0, 59, 111, 0.8);
-
+    border: 1px solid rgba(0, 59, 111, 0.8) !important;
+    font-family: "Roboto", sans-serif;
 }
 
 .dropdown-item-style {
