@@ -52,7 +52,6 @@
 
                     <p class="fw-bold">Quick search: </p>
                         
-
                         {% for tag in tags %}
                         <div class="d-flex justify-content-center">
                         <form role="search" class="pb-1" method="GET" action="{% url 'products' %}">
@@ -64,8 +63,6 @@
 
                         {% endfor %}
 
-                        
-                    
                     <p class="card-text text-start fw-bold mt-2">Go to category: <a
                             href="{% url 'products' %}?category={{ product.category.name }}" class="a-style"><span
                                 class="tag-btn-style">{{ product.category.display_name }}</span></a></p>

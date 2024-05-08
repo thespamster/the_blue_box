@@ -39,3 +39,5 @@ $('label[for="id_email2"]').css("display", "none")
 $('label[for="id_username"]').css("display", "none")
 $('label[for="id_password1"]').css("display", "none")
 $('label[for="id_password2"]').css("display", "none")
+
+
