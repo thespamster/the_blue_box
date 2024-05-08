@@ -1,12 +1,10 @@
 /* CSS tardis icon sizing */
-
 #navbar-icon {
     width: 45px;
     height: 45px;
 }
 
 /* CSS to change search box and button style */
-
 .search-btn-style {
     border-radius: 5px;
     width: 4rem;
@@ -29,15 +27,14 @@
 }
 
 /* CSS to style the hamburger in the navbar */
-
-.navbar-toggler{
+.navbar-toggler {
     border: 0;
     color: rgba(0, 59, 111, 0);
 }
 
 .navbar-toggler:active{
-    color: rgba(0, 59, 111, 0);
-    border-radius: 5px;
+    color: rgba(0, 59, 111, 0) !important;
+    border: 0;
 }
 
 .nav-link {
@@ -51,7 +48,6 @@
 }
 
 /* CSS to style the body */
-
 body {
     min-height: 100vh;
     background-color: rgba(0, 59, 111, 0.07);
@@ -72,7 +68,6 @@ body {
 }
 
 /* CSS to style the footer */
-
 .footer-style {
     background-color: rgba(0, 59, 111, 0.15);
     width: 100%;
@@ -94,7 +89,6 @@ body {
 }
 
 /* CSS to style the homepage */
-
 .alert-style {
     width: 100%;
     height: 15rem;
@@ -126,13 +120,11 @@ body {
 }
 
 /* CSS to style the shopping cart */
-
 .cart-style {
     color: rgb(0, 59, 111);
 }
 
 /* CSS to style the delivery banner */
-
 #free-delivery {
     color: white;
     height: 5dvh;
@@ -140,7 +132,6 @@ body {
 }
 
 /* CSS to style the icons */
-
 .icon-style {
     color: rgb(0, 59, 111) !important; /* !important to override Bootstrap default */
 }
@@ -167,7 +158,6 @@ body {
 }
 
 /* CSS to change the look of Bootstrap cards used to display products */
-
 .product-image-style {
     width: 150px;
     height: 150px;
@@ -229,7 +219,6 @@ body {
 }
 
 /* CSS to change the look of the Bootstrap buttons for keep shopping, add to cart and quantity window */
-
 .btn-keep-shopping {
     background-color: rgb(255, 255, 255);
     color: black;
@@ -280,8 +269,15 @@ body {
     border: 0;
 }
 
-/* CSS to change the look of <a> href link elements */
+/* To remove black border around hamburger menu */
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
 
+/* CSS to change the look of <a> href link elements */
 .a-style {
     text-decoration: none;
     color: black;
@@ -290,7 +286,6 @@ body {
 }
 
 /* CSS to change the look of the Bootstrap form tag elements */
-
 .tag-btn-style {
     color: black;
     border: 0;
@@ -333,7 +328,6 @@ body {
 }
 
 /* Change the look of the Bootstrap offcanvas elements */
-
 .offcanvas-body {
     background-color: rgba(0, 59, 111, 0.25);
 }
@@ -355,7 +349,6 @@ body {
 
 
 /* CSS to style the 'Back to Top' button */
-
 #topButton {
     display: none;
     position: fixed;
@@ -399,7 +392,6 @@ body {
 }
 
 /* CSS to style products and icons in shopping cart */
-
 .cart-image-style {
     width: 24px;
     height: 24px;
@@ -412,7 +404,6 @@ body {
 }
 
 /* CSS to style the checkout page */
-
 .table-style {
     border-radius: 5px;
 }
@@ -458,7 +449,6 @@ body {
 }
 
 /* CSS for under construction holding page */
-
 .under-construction-text {
     font-family: "Roboto", sans-serif;
     font-weight: 600;
@@ -480,7 +470,6 @@ body {
 }
 
 /* CSS for django allauth styles */
-
 .container-style {
     height: 98dvh;
 }
@@ -499,7 +488,6 @@ body {
 }
 
 /* Change focus on all inputs incl. allauth */
-
 *:focus {
     outline: none;
 }
