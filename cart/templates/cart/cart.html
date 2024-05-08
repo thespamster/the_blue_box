@@ -50,8 +50,28 @@
                     {% endfor %}
 
                     <tr>
+                        <th scope="row"></th>
                         <td></td>
                         <td></td>
+                        <td></td>
+                        <td class="text-end fw-bold">P&P</td>
+                       
+                        
+                        <td class="text-end fw-bold">
+                            {% if delivery == 0 %}
+                            <span>FREE</span>
+                            {% else %}
+                            <span>£{{ delivery }}</span>
+                            {% endif %}
+                        </td>
+                        <td></td>
+                        
+                    </tr>
+
+                    <tr>
+                        <th scope="row"></th>
+                        <td></td>
+                        
                         
                         <td class="text-center fw-bold table-data-style">{{ product_count }}
                             
@@ -66,11 +86,14 @@
                             {% endif %}
                         </td>
                         <td></td>
+                        
+                        
+                        
                         <td class="text-end fw-bold table-data-style">Total</td>
-                        <td class="fw-bold table-data-style">
+                        <td class="text-end fw-bold table-data-style">
                             {% if total_cost %}
 
-                            £{{ total_cost|floatformat:2 }}
+                            £{{ total_with_delivery|floatformat:2 }}
 
                             {% else %}
 
@@ -80,6 +103,7 @@
                         </td>
                         <td></td>
                     </tr>
+
                 </tbody>
             </table>
 

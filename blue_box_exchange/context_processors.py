@@ -2,6 +2,7 @@ from products.models import Category, Product
 from home.models import Doctors
 from django.conf import settings
 from django.shortcuts import get_object_or_404
+from decimal import Decimal
 
 def add_variable_to_context(request):
 
@@ -34,13 +35,17 @@ def cart_contents(request):
         delivery = settings.STANDARD_DELIVERY_COST
     else:
         delivery = 0
-        total_cost=total_cost+delivery
+        
+    total_with_delivery=Decimal(total_cost)+Decimal(delivery)
 
     context={
         'cart_items': cart_items,
         'total_cost': total_cost,
         'product_count': product_count,
+        'standard_delivery': settings.STANDARD_DELIVERY_COST,
         'free_delivery': settings.FREE_DELIVERY,
+        'delivery': delivery,
+        'total_with_delivery': total_with_delivery,
     }
 
     return context
