@@ -61,6 +61,7 @@ INSTALLED_APPS = [
     'cart',
     'fanart',
     'boards',
+    'checkout',
 ]
 
 MIDDLEWARE = [
