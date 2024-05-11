@@ -8,33 +8,33 @@
 <div class="container-fluid">
     <div class="row justify-content-center">
 
-        {% for product in products %}
+        {% for item in products %}
 
         <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1">
             
             <div class="card card-style">
                 
                 <div class="card-header mb-1 text-center">
-                    <a href="{% url 'products' %}?category={{ product.category.name }}" title="Show {{ product.category.display_name }}" class="a-style">{{ product.category.display_name }}</a>
+                    <a href="{% url 'products' %}?category={{ item.category.name }}" title="Show {{ item.category.display_name }}" class="a-style">{{ item.category.display_name }}</a>
                 </div>
-                <a href="{% url 'product_detail' product.id %}" class="a-style">
+                <a href="{% url 'product_detail' item.id %}" class="a-style">
                 <div class="d-flex justify-content-center">
 
-                {% if product.image %}
+                {% if item.image %}
                 
-                    <img src="{{ product.image_url }}" class="card-img-top product-image-style mx-auto" alt="{{ product.name }}">
+                    <img src="{{ item.image_url }}" class="card-img-top product-image-style mx-auto" alt="{{ item.name }}">
                 
                 {% else %}
                 
-                    <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-image-style mx-auto" alt="{{ product.name }}">
+                    <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-image-style mx-auto" alt="{{ item.name }}">
 
                 {% endif %}
 
                 </div>
                 <div class="card-body">
-                    <p class="card-text fw-bold">{{ product.name|truncatechars:60 }}</p>
-                    <p class="card-text">{{ product.description|truncatechars:70 }}</p>
-                    <p class="card-text fw-bold">£{{ product.price }}</p>
+                    <p class="card-text fw-bold">{{ item.name|truncatechars:60 }}</p>
+                    <p class="card-text">{{ item.description|truncatechars:70 }}</p>
+                    <p class="card-text fw-bold">£{{ item.price }}</p>
                 </div>
             </a>
             </div>
