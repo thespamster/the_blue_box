@@ -8,24 +8,23 @@
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-8 col-xl-6">
-            <p>Complete your order by completing the form below</p>
+            <p class="fw-bold">Complete your order by filling out the form below</p>
             <form actions="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset>
                     <legend>Details</legend>
-                    print(order_form)
                     {{ order_form.full_name | as_crispy_field }}
                     {{ order_form.email | as_crispy_field }}
+                    {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
                 <fieldset>
                     <legend>Delivery</legend>
-                    {{ order_form.phone_number | as_crispy_field }}
-                    {{ order_form.country | as_crispy_field }}
-                    {{ order_form.postcode | as_crispy_field }}
-                    {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.street_address1 | as_crispy_field }}
                     {{ order_form.street_address2 | as_crispy_field }}
+                    {{ order_form.town_or_city | as_crispy_field }}
                     {{ order_form.county | as_crispy_field }}
+                    {{ order_form.postcode | as_crispy_field }}
+                    {{ order_form.country | as_crispy_field }}
                 </fieldset>
                 <div>
                     {% if user.is_authenticated %}
@@ -39,18 +38,18 @@
                     {% endif %}
 
                 </div>
-                <fieldset>
+                <fieldset class="pt-5">
                     <legend>
                         Payment
                     </legend>
                     <div id="card-element"></div>
                     <div id="card-errors" role="alert"></div>
                 </fieldset>
-                <a href="{% url 'view_cart' %}" class="a-style" title="shopping trolley">
+                <a href="{% url 'view_cart' %}" class="a-style pe-5" title="back to shopping trolley">
                     <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap cart">
                   </a>
                 <button id="submit-button" class="btn btn-primary" type="submit">Complete Order</button>
-                <span>Your card will be charged £{{ grand_total|floatformat:2 }}</span>
+                <p class="pt-3 fw-bold">Your card will be charged £{{ total_with_delivery | floatformat:2 }}</p>
                 
             </form>
 

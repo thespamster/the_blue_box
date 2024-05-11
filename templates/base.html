@@ -164,14 +164,11 @@
           {% for doctor in doctors %}
   
           <div>
-  
             <a href="{% url 'products' %}?q={{ doctor.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">{{ doctor.name }}</a>
-  
           </div>
   
           {% endfor %}
 
-          
           <p class="text-center offcanvas-text-style pt-4 fw-bold">Search by price</p>
           <a href="{% url 'products' %}?price=0-10" class="tag-btn-style a-style text-center">upto £10</a>
           <a href="{% url 'products' %}?price=10-50" class="tag-btn-style  a-style text-center">£10 - £50</a>
@@ -200,8 +197,7 @@
             src="{% static 'img/bootstrap_icons/star.svg' %}" alt="ratings star"><img class="pb-1 rating-star-size"
             src="{% static 'img/bootstrap_icons/star.svg' %}" alt="ratings star"><img class="pb-1 rating-star-size"
             src="{% static 'img/bootstrap_icons/star.svg' %}" alt="ratings star"></a>
-          </div>
-              
+          </div>  
           </div>
           <form class="d-flex pt-5" role="search" method="GET" action="{% url 'products' %}">
             <input
