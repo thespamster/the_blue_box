@@ -22,44 +22,38 @@
         </title>
         {% block extra_head %}
         {% endblock extra_head %}
+        
     </head>
     <body>
-        <div class="container-flex d-flex align-items-center justify-content-center container-style">
-            <div class="row d-flex justify-content-center">
-                <div class="col-12 col-md-10">
         {% block body %}
-            {% if messages %}
-                <div>
-                    <strong>{% trans "Messages:" %}</strong>
-                    {% for message in messages %}
-                    <p>{{ message }}<p>
-                    {% endfor %}
-                </div>
-            {% endif %}
-            <div>
-                {% if user.is_authenticated %}
+        <div class="container-flex container-style d-flex align-items-center px-3">
+            <div class="row">
+                <div class="col-12 d-flex justify-content-center">
+                    
+                    {% if messages %}
+                        
+                            <strong>{% trans "Messages:" %}</strong>
+                            {% for message in messages %}
+                            <p>{{ message }}<p>
+                            {% endfor %}
+                        
+                    {% endif %}
+                
+                    {% if user.is_authenticated %}
                     <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a>
                     <a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
                     {% endif %}
             </div>
             {% block content %}
             {% endblock content %}
-            <div>
-                <div class="row">
-                    <div class="col-12 text-start">
-                        <a href="{% url 'products' %}" class="btn btn-keep-shopping mt-5">
-                            <span>Take me to the shop</span>
-                        </a>
                     </div>
                 </div>
             </div>
             {% endblock body %}
             {% block extra_body %}
             {% endblock extra_body %}
-            <div>
-            </div>
-        </div>
         <img src="{% static 'img/tardis.png' %}" id="allauth-tardis" alt="Tardis Icon"></a>
+        
         <script
         src="https://code.jquery.com/jquery-3.7.1.js"
         integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="

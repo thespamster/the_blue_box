@@ -28,17 +28,17 @@
                 </fieldset>
                 <div>
                     {% if user.is_authenticated %}
-                    <label for="id-save-info">Save this delivery information to my profile</label>
+                    <label for="id-save-info" class="fw-bold">Save this delivery information to my profile</label>
                     <input type="checkbox" id="id-save-info" name="save-info" checked>
                     {% else %}
                     <label for="id-save-info">
-                        <a href="{% url 'account_login' %}">Log in</a>
-                        <a href="{% url 'account_signup' %}">Sign up</a> to save this information to your profile
+                        <a href="{% url 'account_login' %}" class="a-style fw-bold">Log in</a> or
+                        <a href="{% url 'account_signup' %}" class="a-style fw-bold">Sign up</a> to save this information to your profile
                     </label>
                     {% endif %}
 
                 </div>
-                <fieldset class="pt-5">
+                <fieldset class="py-2">
                     <legend>
                         Payment
                     </legend>
@@ -59,3 +59,10 @@
 </div>
 
 {% endblock %}
+
+{% block postloadjs %}
+   {{ block.super }}
+   {{ stripe_public_key|json_script:"id_stripe_public_key" }}
+   {{ client_secret|json_script:"id_client_secret" }}
+   <script src="{% static 'js/stripe_elements.js' %}"></script>
+{%endblock%}

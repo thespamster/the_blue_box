@@ -10,7 +10,7 @@
     {% endelement %}
     <p>
         {% blocktrans %}Not got an account? Then 
-    <a href="{{ signup_url }}">sign up</a> here.{% endblocktrans %}
+    <a href="{{ signup_url }}" class="a-style fw-bold">sign up</a> here.{% endblocktrans %}
     </p>
     {% url 'account_login' as login_url %}
     {% element form form=form method="post" action=login_url tags="entrance,login" %}
