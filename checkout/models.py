@@ -3,6 +3,7 @@ from django.db import models
 from django.db.models import Sum
 from django.conf import settings
 from products.models import Product
+from decimal import Decimal
 
 # Create your models here.
 class Order(models.Model):
@@ -27,12 +28,12 @@ class Order(models.Model):
     
     def update_total(self):
         ''' update grand total each time a line item is added, accounting for delivery costs '''
-        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum']
+        self.order_total = self.lineitems.aggregate(Sum('lineitem_total'))['lineitem_total__sum'] or 0
         if self.order_total < settings.FREE_DELIVERY:
             self.delivery_cost = 2.99
         else:
             self.delivery_cost = 0
-        self.grand_total = self.order_total + self.delivery_cost
+        self.grand_total = Decimal(self.order_total) + Decimal(self.delivery_cost)
         self.save()
     
     def save(self, *args, **kwargs):

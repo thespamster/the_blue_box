@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_title %}- Checkout Success{% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-xl-6 d-flex flex-column align-items-center justify-content-center">
+            <p>
+                Thankyou for your order
+            </p>
+            <p>
+                Your order number is <span class="fw-bold">{{ order.order_ref }}</span>
+            </p>
+            <P>
+                A confirmation email will be sent to {{ order.email }}
+            </P>
+            <p class="fw-bold">Order Summary:</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-xl-6 d-flex justify-content-center">
+            
+            <table class="table">
+                <tbody>
+                    {% for bought_item in order_items %}
+                    <tr>
+                    <td class="pe-5"> {{ bought_item.product }} </td> 
+                    <td> {{ bought_item.quantity }} </td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                    <td class="pt-3 fw-bold">Total price (incl. delivery): £{{ order.grand_total }}</td>
+                    <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 d-flex justify-content-center mb-2">
+            <a href="{% url 'products' %}" class="btn btn-keep-shopping mt-5">
+                <span>Back to the Shop</span>
+            </a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
