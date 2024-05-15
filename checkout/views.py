@@ -4,6 +4,7 @@ from django.conf import settings
 from .forms import Order, OrderForm
 from products.models import Product
 from .models import OrderLineItem
+from decimal import Decimal
 from blue_box_exchange.context_processors import cart_contents
 import stripe
 import os
@@ -26,7 +27,6 @@ def checkout(request):
             'postcode': request.POST['postcode'],
             'country': request.POST['country'],
         }
-
         order_form = OrderForm(form_data)
         if order_form.is_valid():
             order = order_form.save()
@@ -50,14 +50,11 @@ def checkout(request):
             return redirect(reverse('checkout_success', args=[order.order_ref]))
         else:
             messages.error(request, 'There was an error with your form. Please double check your information.')
-        
-
     else: 
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(request, "There's nothing in your shopping cart at the moment")
             return redirect(reverse('products'))
-        
         current_cart = cart_contents(request)
         total_cost = current_cart['total_with_delivery']
         stripe_total = round(total_cost * 100)
@@ -66,6 +63,7 @@ def checkout(request):
             amount=stripe_total,
             currency=settings.STRIPE_CURRENCY,
         )
+        messages.info(request, 'Once the order is submitted please wait for confirmation. Do not close/refresh the page.')
         client_secret= intent.client_secret
         order_form = OrderForm()
         template = 'checkout/checkout.html'
@@ -74,7 +72,6 @@ def checkout(request):
             'stripe_public_key': stripe_public_key,
             'client_secret': client_secret,
         }
-
     return render(request, template, context)
 
 def checkout_success(request, order_ref):
@@ -83,13 +80,10 @@ def checkout_success(request, order_ref):
     order_items = OrderLineItem.objects.filter(order=order.id)
     messages.success(request, f'Order successfully processed! Your order number is {order_ref}. A confirmation email will be sent to {order.email}.')
     if 'cart' in request.session:
-        
         del request.session['cart']
-    
     template = 'checkout/checkout_success.html' 
     context = {
         'order': order,
         'order_items': order_items,
     }
-
     return render(request, template, context)

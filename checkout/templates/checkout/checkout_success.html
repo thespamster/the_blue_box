@@ -17,14 +17,15 @@
             <P>
                 A confirmation email will be sent to {{ order.email }}
             </P>
-            <p class="fw-bold">Order Summary:</p>
         </div>
     </div>
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-8 col-xl-6 d-flex justify-content-center">
-            
             <table class="table">
                 <tbody>
+                    <tr>
+                        <td class="pe-5 fw-bold"> Order Summary: </td> 
+                        <td></td>
                     {% for bought_item in order_items %}
                     <tr>
                     <td class="pe-5"> {{ bought_item.product }} </td> 
@@ -35,6 +36,61 @@
                     <td class="pt-3 fw-bold">Total price (incl. delivery): £{{ order.grand_total }}</td>
                     <td></td>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-12 col-md-8 col-xl-6 d-flex flex-column align-items justify-content-center mb-2">
+            <table class="table">
+                <tbody>
+                    
+                    <tr>
+                        <td class="pe-5 fw-bold"> Delivery Address: </td> 
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td class="pe-5">
+                            {{ order.full_name }} </td> 
+                        <td></td>
+                    <tr>
+                    <tr>
+                        <td class="pe-5"> {{ order.street_address1 }} </td> 
+                        <td></td>
+                    <tr>
+                    <tr>
+                        {% if order.street_address2 %}
+                        <td class="pe-5">
+                                {{ order.street_address2 }}
+                        </td>
+                        
+                        <td></td>
+                        {% endif %}
+                    <tr>
+                    <tr>
+                        {% if order.county %}
+                        <td class="pe-5">
+                                {{ order.county }}
+                        </td> 
+                        <td></td>
+                        {% endif %}
+                    <tr>
+                    <tr>
+                        {% if order.postcode %}
+                            <td class="pe-5">
+                                {{ order.postcode }}
+                            </td> 
+                            <td></td>
+                        {% endif %}
+                    <tr>
+                        <tr>
+                            {% if order.country %}
+                                <td class="pe-5">
+                                    {{ order.country }}
+                                </td> 
+                                <td></td>
+                            {% endif %}
+                        <tr>
                 </tbody>
             </table>
         </div>
