@@ -127,7 +127,7 @@ body {
 /* CSS to style the delivery banner */
 #free-delivery {
     color: white;
-    height: 5dvh;
+    min-height: 7dvh;
     background-color: rgba(0, 59, 111, 0.85);
 }
 

@@ -60,8 +60,10 @@ INSTALLED_APPS = [
     'fanart',
     'boards',
     'checkout',
+    'profiles',
     'crispy_forms',
     'crispy_bootstrap5',
+    
 ]
 
 MIDDLEWARE = [

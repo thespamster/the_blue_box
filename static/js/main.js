@@ -24,12 +24,13 @@ function topFunction() {
 // JS to style the allauth templates
 
 $('input').css('border', 'none')
-$('p > input').css('width', '25rem') // Targets just the all-auth forms
+$('p > input').css('width', '15rem') // Targets just the all-auth forms
 $(":submit").css("padding", "5px") 
 $(":submit").addClass("btn-keep-shopping")
 
 // Change style of account login page
 $('#id_password_helptext a').text("Reset")
+$('#id_password_helptext a').addClass("a-style fw-bold")
 $('label[for="id_login"]').css("display", "none")
 $('label[for="id_password"]').css("display", "none")
 
