@@ -44,6 +44,7 @@
                     </legend>
                     <div id="card-element"></div>
                     <div id="card-errors" role="alert" style="color: red"></div>
+                    <input type="hidden" name="client_secret" value="{{ client_secret }}">
                 </fieldset>
                 <a href="{% url 'view_cart' %}" class="a-style pe-5" title="back to shopping trolley">
                     <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap cart">
