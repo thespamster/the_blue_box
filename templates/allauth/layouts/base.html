@@ -34,10 +34,9 @@
                             <p>{{ message }}<p>
                             {% endfor %}
                         {% endif %}
-                        {% if user.is_authenticated %}
-                            <a href="{% url 'account_email' %}">{% trans "Change Email" %}</a>
-                            <a href="{% url 'account_logout' %}">{% trans "Sign Out" %}</a>
-                        {% endif %}
+                        <a href="{% url 'products' %}" class="btn btn-keep-shopping my-5">
+                            <span>To The Shop</span>
+                        </a>
                         {% block content %}
                         {% endblock content %}
                     </div>

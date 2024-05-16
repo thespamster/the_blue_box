@@ -6,9 +6,24 @@
 {% block content %}
 
 <div class="container-fluid">
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex justify-content-start">
         <div class="col-12 col-md-8 col-xl-6">
-                Profile for: {{ profile }}
+                <h2 class="py-3">My Account</h2>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-start">
+        <div class="col-12 col-lg-6">
+            <p class="fw-bold">Delivery Info:</p>
+            <form class="mt-3" action="{% url 'profile' %}" method="POST" id="account-update-form">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-primary my-3">Update</button>
+            </form>
+        </div>
+        <div class="col-12 col-lg-6 col">
+            <p class="fw-bold">Order History:</p>
+            {{ order }}
+            
         </div>
     </div>
 </div>
