@@ -538,5 +538,10 @@ body {
     border: 1px solid #000;
 }
 
+/* CSS to style the Profile page */
 
+.order-history-style {
+    max-height: 75dvh;
+    overflow-y: auto;
+}
 
