@@ -1,0 +1,1 @@
+Blue Box Shop confirmation for Order Ref {{ order.order_ref }}

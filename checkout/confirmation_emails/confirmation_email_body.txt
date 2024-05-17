@@ -1,0 +1,20 @@
+Hi {{ order.full_name }}
+
+Thank you for your order,
+
+Order Ref: {{ order.order_ref }}
+Date: {{ order.date }}
+
+Order Total (incl. delivery): {{ order.grand_total }}
+
+Delivery Address:
+
+{{ order.street_address1 }}
+{{ order.town_or_city }}
+{{ order.postcode }}
+
+If you need to contact us about this order please contact us at {{ contact_email }}
+
+Regards, 
+
+Blue Box Shop
