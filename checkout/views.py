@@ -103,6 +103,7 @@ def checkout(request):
                 order_form = OrderForm()
         else:
             order_form = OrderForm()
+
         messages.info(request, 'Once the order is submitted please wait for confirmation. Do not close/refresh the page.')
         client_secret= intent.client_secret
         template = 'checkout/checkout.html'
@@ -118,6 +119,12 @@ def checkout_success(request, order_ref):
     order = get_object_or_404(Order, order_ref=order_ref)
     order_items = OrderLineItem.objects.filter(order=order.id)
     profile = UserProfile.objects.get(user=request.user)
+
+    if request.user.is_authenticated:
+        profile = UserProfile.objects.get(user=request.user)
+        # Attach the user's profile to the order
+        order.user_profile = profile
+        order.save()
 
     # Save the user's info
     if save_info:
