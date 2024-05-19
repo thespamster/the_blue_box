@@ -23,34 +23,39 @@
         <div class="col-12 col-lg-6 col order-history-style">
             <p class="fw-bold">Order History:</p>
             <div>
+
+                {% if orders %}
+
                 <table>
                     <thead>
                         <tr>
-                            <th>Order Ref</th>
-                            <th>Date</th>
-                            <th>Items</th>
-                            <th>Total</th>
+                            <th class="text-start px-3">Order Ref</th>
+                            <th class="text-start px-3">Date</th>
+                            <th class="text-end px-3">Total</th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for order in orders %}
                         <tr>
-                            <td>
-                                <a href="{% url 'order_history' order.order_ref %}" title="{{ order.order_ref }}">{{ order.order_ref | truncatechars:8 }}</a>
+                            <td class="px-3 pt-2 text-start">
+                                <a href="{% url 'order_history' order.order_ref %}"
+                                    title="{{ order.order_ref }}" class="a-style fw-bold">
+                                    {{ order.order_ref }}
+                                </a>
                             </td>
-                            <td>{{ order.date }}</td>
-                            <td>
-                                <ul>
-                                    {% for item in order.lineitems.all %}
-                                    <li>{{ item.product.name }} x {{ item.quantity }}</li>
-                                    {% endfor %}
-                                </ul>
-                            </td>
-                            <td>{{ order.grand_total }}</td>
+                            <td class="px-3">{{ order.date }}</td>
+                            
+                            <td class="text-end px-3">{{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
+
+                {% else %}
+
+                <p class="fw-bold">You've not placed any orders yet. Click Shop to go shopping.</p>
+
+                {% endif %}
             </div>
             
         </div>

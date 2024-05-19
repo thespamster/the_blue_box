@@ -3,7 +3,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
-from checkout.models import Order
+from checkout.models import Order, OrderLineItem
 
 # Create your views here.
 @login_required
@@ -37,6 +37,7 @@ def profile(request):
 def order_history(request, order_ref):
     ''' Display the user's order history '''
     order = get_object_or_404(Order, order_ref=order_ref)
+    order_items = OrderLineItem.objects.filter(order=order_ref)
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_ref}. '
@@ -45,6 +46,7 @@ def order_history(request, order_ref):
 
     template = 'checkout/checkout_success.html'
     context = {
+        'order_items': order_items,
         'order': order,
         'from_profile': True,
     }

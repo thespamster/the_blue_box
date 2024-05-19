@@ -83,7 +83,7 @@
 
                         {% if request.user.is_superuser %}
 
-                            <li><a class="dropdown-item a-style" href="#">Admin</a></li>
+                            <li><a class="dropdown-item a-style" href="{% url 'admin:index' %}">Admin</a></li>
 
                         {% endif %}
 
