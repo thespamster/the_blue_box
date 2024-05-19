@@ -1,54 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_title %}- Cart{% endblock %}
-
 {% block content %}
 
 <div class="container-fluid">
     <div class="row d-flex justify-content-center">
         <div class="col-12 col-md-8 col-xl-6">
             <h2 class="my-5">In Your Cart</h2>
-
             {% if cart_items %}
-
             <table class="table">
-
                 {% for item in cart_items %}
-
                 <tbody>
                     <tr>
                         <th scope="row"></th>
                         <td class="align-middle"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
                         <td class="text-start align-middle table-data-style">{{ item.product }}</td>
                         <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
-                            {% csrf_token %} 
-                        <td class="table-data-style align-middle "><input class="form-control qty_input quantity-style"
-                            type="number" name="quantity" value="{{ item.quantity }}" min="0" max="99"
-                            data-item_id="{{ item.product.id }}" id="id_qty_{{ item.item_id }}"></td>
-                        <td class="table-data-style align-middle"><button type="submit" class="btn" title="update quantity"><img class="update-icon-style mb-1" src="{% static 'img/bootstrap_icons/arrow-clockwise.svg' %}"
-                            alt="Bootstrap trash3 icon"></button>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-                            </form>
+                            {% csrf_token %}
+                            <td class="table-data-style align-middle "><input
+                                    class="form-control qty_input quantity-style" type="number" name="quantity"
+                                    value="{{ item.quantity }}" min="0" max="99" data-item_id="{{ item.product.id }}"
+                                    id="id_qty_{{ item.item_id }}"></td>
+                            <td class="table-data-style align-middle"><button type="submit" class="btn"
+                                    title="update quantity"><img class="update-icon-style mb-1"
+                                        src="{% static 'img/bootstrap_icons/arrow-clockwise.svg' %}"
+                                        alt="Bootstrap trash3 icon"></button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                        </form>
                         </td>
                         <td class="text-end table-data-style align-middle">£{{ item.product.price }}</td>
                         <td>
                             <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
-
                                 {% csrf_token %}
-
-                                <input class="form-control qty_input quantity-style"
-                                type="hidden" name="quantity" value="0"
-                                data-item_id="{{ item.product.id }}" id="id_qty_{{ item.item_id }}">
-                            <button type="submit" class="btn align-middle" title="delete item"><img class="bs-bin-style" src="{% static 'img/bootstrap_icons/trash3.svg' %}"
-                                alt="Bootstrap trash3 icon"></button>
-                            <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                                <input class="form-control qty_input quantity-style" type="hidden" name="quantity"
+                                    value="0" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.item_id }}">
+                                <button type="submit" class="btn align-middle" title="delete item"><img
+                                        class="bs-bin-style" src="{% static 'img/bootstrap_icons/trash3.svg' %}"
+                                        alt="Bootstrap trash3 icon"></button>
+                                <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </form>
                         </td>
                     </tr>
-
                     {% endfor %}
-
                     <tr>
                         <th scope="row"></th>
                         <td></td>
@@ -68,42 +61,29 @@
                         <th scope="row"></th>
                         <td></td>
                         <td class="text-center fw-bold table-data-style">{{ product_count }}
-                            
-                            {% if product_count == 1 %} 
-                            
+                            {% if product_count == 1 %}
                             Item in shopping trolley
-                        
                             {% else %}
-
                             Items in shopping trolley
-
                             {% endif %}
                         </td>
                         <td></td>
                         <td class="text-end fw-bold table-data-style">Total</td>
                         <td class="text-end fw-bold table-data-style">
                             {% if total_cost %}
-
                             £{{ total_with_delivery|floatformat:2 }}
-
                             {% else %}
-
                             £0.00
-
                             {% endif %}
                         </td>
                         <td></td>
                     </tr>
                 </tbody>
             </table>
-
             {% else %}
-
             <p class="fw-bold table-data-style mt-5">You haven't added anything to your cart yet</p>
             <p class="fw-bold table-data-style">Click the 'Carry On Shopping' button to go to the shop</p>
-
             {% endif %}
-
             <div class="col-12 mb-2 d-flex justify-content-between">
                 <a href="{% url 'products' %}" class="btn btn-backto-shop mt-5">
                     <span class="fw-bold" title="back to all items">Carry On Shopping</span>
@@ -115,5 +95,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

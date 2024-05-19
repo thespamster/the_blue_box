@@ -1,3 +1,7 @@
+'''
+    This file contains the views for the cart app
+'''
+
 from django.shortcuts import render,redirect, get_object_or_404
 from django.contrib import messages
 from products.models import Product
@@ -11,11 +15,9 @@ def view_cart(request):
 
 def add_to_cart(request, item_id):
     """ Add a quantity of the specified product to the shopping bag """
-
     product = get_object_or_404(Product, pk=item_id)
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
-    ''' get the cart from the session or create one if it doesn't exist '''
     cart = request.session.get('cart', {})
     if item_id in list(cart.keys()):
         cart[item_id] += quantity
