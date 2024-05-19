@@ -23,6 +23,7 @@ class Category(models.Model):
 
 
 class Product(models.Model):
+    ''' Model for the products '''
     category = models.ForeignKey('Category', null=True, blank=True, on_delete=models.SET_NULL)
     ean = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
@@ -32,6 +33,7 @@ class Product(models.Model):
     image = models.ImageField(null=True, blank=True)
     image_url = models.URLField(max_length=254, null=True, blank=True)
     tags = models.CharField(max_length=254)
-    
+
     def __str__(self):
         return self.name
+    
