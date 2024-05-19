@@ -1,5 +1,8 @@
-from django.apps import AppConfig
+'''
+    Initialize the boards app configuration
+'''
 
+from django.apps import AppConfig
 
 class BoardsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'

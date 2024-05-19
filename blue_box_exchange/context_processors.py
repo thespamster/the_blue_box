@@ -1,8 +1,16 @@
-from products.models import Category, Product
-from home.models import Doctors
+'''
+    Context processors allowing access to certain variables
+    across all of this sites apps
+'''
+
+from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from decimal import Decimal
+from products.models import Category, Product
+from home.models import Doctors
+
+
+
 
 def add_variable_to_context(request):
 
@@ -15,12 +23,15 @@ def add_variable_to_context(request):
     }
 
 def cart_contents(request):
+    '''
+        Returns the cart contents and calculates the total cost
+        and cost incl. delivery
+    '''
 
     cart_items = []
     total_cost = 0
     product_count = 0
     cart = request.session.get('cart', {})
-
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
         total_cost += quantity * product.price
@@ -30,14 +41,11 @@ def cart_contents(request):
             'quantity': quantity,
             'product': product,
         })
-
     if total_cost < settings.FREE_DELIVERY:
         delivery = settings.STANDARD_DELIVERY_COST
     else:
         delivery = 0
-        
     total_with_delivery=Decimal(total_cost)+Decimal(delivery)
-
     context={
         'cart_items': cart_items,
         'total_cost': total_cost,
@@ -47,5 +55,5 @@ def cart_contents(request):
         'delivery': delivery,
         'total_with_delivery': total_with_delivery,
     }
-
     return context
+

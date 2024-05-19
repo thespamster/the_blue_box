@@ -1,7 +1,11 @@
+'''
+    This file is used to define the URL patterns for the boards app.
+'''
+
 from django.urls import path
-from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from . import views
 
 urlpatterns = [
     path('', views.boards, name='boards'),
