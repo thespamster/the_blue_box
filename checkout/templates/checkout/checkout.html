@@ -25,7 +25,7 @@
                     {{ order_form.county | as_crispy_field }}
                     {{ order_form.postcode | as_crispy_field }}
                     {{ order_form.country | as_crispy_field }}
-                    
+
                 </fieldset>
                 <div>
                     {% if user.is_authenticated %}
@@ -34,10 +34,10 @@
                     {% else %}
                     <label for="id-save-info">
                         <a href="{% url 'account_login' %}" class="a-style fw-bold">Log in</a> or
-                        <a href="{% url 'account_signup' %}" class="a-style fw-bold">Sign up</a> to save this information to your profile
+                        <a href="{% url 'account_signup' %}" class="a-style fw-bold">Sign up</a> to save this
+                        information to your profile
                     </label>
                     {% endif %}
-
                 </div>
                 <fieldset class="py-2">
                     <legend>
@@ -49,10 +49,10 @@
                 </fieldset>
                 <a href="{% url 'view_cart' %}" class="a-style pe-5" title="back to shopping trolley">
                     <img class="bs-icon-style" src="{% static 'img/bootstrap_icons/cart3.svg' %}" alt="Bootstrap cart">
-                  </a>
+                </a>
                 <button id="submit-button" class="btn btn-primary" type="submit">Complete Order</button>
                 <p class="pt-3 fw-bold">Your card will be charged £{{ total_with_delivery | floatformat:2 }}</p>
-                
+
             </form>
 
 
@@ -63,8 +63,8 @@
 {% endblock %}
 
 {% block postloadjs %}
-   {{ block.super }}
-   {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-   {{ client_secret|json_script:"id_client_secret" }}
-   <script src="{% static 'js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'js/stripe_elements.js' %}"></script>
 {%endblock%}

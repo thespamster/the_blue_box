@@ -1,8 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_title %}- Checkout Success{% endblock %}
-
 {% block content %}
 
 <div class="container-fluid">
@@ -24,17 +22,17 @@
             <table class="table">
                 <tbody>
                     <tr>
-                        <td class="pe-5 fw-bold"> Order Summary: </td> 
+                        <td class="pe-5 fw-bold"> Order Summary: </td>
                         <td></td>
-                    {% for bought_item in order_items %}
+                        {% for bought_item in order_items %}
                     <tr>
-                    <td class="pe-5"> {{ bought_item.product }} </td> 
-                    <td> {{ bought_item.quantity }} </td>
+                        <td class="pe-5"> {{ bought_item.product }} </td>
+                        <td> {{ bought_item.quantity }} </td>
                     </tr>
                     {% endfor %}
                     <tr>
-                    <td class="pt-3 fw-bold">Total price (incl. delivery): £{{ order.grand_total }}</td>
-                    <td></td>
+                        <td class="pt-3 fw-bold">Total price (incl. delivery): £{{ order.grand_total }}</td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
@@ -44,53 +42,51 @@
         <div class="col-12 col-md-8 col-xl-6 d-flex flex-column align-items justify-content-center mb-2">
             <table class="table">
                 <tbody>
-                    
                     <tr>
-                        <td class="pe-5 fw-bold"> Delivery Address: </td> 
+                        <td class="pe-5 fw-bold"> Delivery Address: </td>
                         <td></td>
                     </tr>
                     <tr>
                         <td class="pe-5">
-                            {{ order.full_name }} </td> 
+                            {{ order.full_name }} </td>
                         <td></td>
                     <tr>
                     <tr>
-                        <td class="pe-5"> {{ order.street_address1 }} </td> 
+                        <td class="pe-5"> {{ order.street_address1 }} </td>
                         <td></td>
                     <tr>
                     <tr>
                         {% if order.street_address2 %}
                         <td class="pe-5">
-                                {{ order.street_address2 }}
+                            {{ order.street_address2 }}
                         </td>
-                        
                         <td></td>
                         {% endif %}
                     <tr>
                     <tr>
                         {% if order.county %}
                         <td class="pe-5">
-                                {{ order.county }}
-                        </td> 
+                            {{ order.county }}
+                        </td>
                         <td></td>
                         {% endif %}
                     <tr>
                     <tr>
                         {% if order.postcode %}
-                            <td class="pe-5">
-                                {{ order.postcode }}
-                            </td> 
-                            <td></td>
+                        <td class="pe-5">
+                            {{ order.postcode }}
+                        </td>
+                        <td></td>
                         {% endif %}
                     <tr>
-                        <tr>
-                            {% if order.country %}
-                                <td class="pe-5">
-                                    {{ order.country }}
-                                </td> 
-                                <td></td>
-                            {% endif %}
-                        <tr>
+                    <tr>
+                        {% if order.country %}
+                        <td class="pe-5">
+                            {{ order.country }}
+                        </td>
+                        <td></td>
+                        {% endif %}
+                    <tr>
                 </tbody>
             </table>
         </div>
@@ -109,5 +105,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

@@ -1,19 +1,27 @@
+'''
+    Methods for checkout views
+'''
+
+import json
 from django.shortcuts import render, redirect, reverse, get_object_or_404, HttpResponse
 from django.views.decorators.http import require_POST
 from django.contrib import messages
 from django.conf import settings
-from .forms import Order, OrderForm
+import stripe
 from products.models import Product
 from profiles.models import UserProfile
 from profiles.forms import UserProfileForm
-from .models import OrderLineItem
 from blue_box_exchange.context_processors import cart_contents
-import stripe
-import json
+from .models import OrderLineItem
+from .forms import Order, OrderForm
+
+
+
 
 # Create your views here.
 @require_POST
 def cache_checkout_data(request):
+    ''' Cache the checkout data '''
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -27,9 +35,9 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
 def checkout(request):
+    ''' Handle the checkout process '''
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
-
     if request.method == 'POST':
         cart = request.session.get('cart', {})
         form_data = {
@@ -70,7 +78,7 @@ def checkout(request):
             return redirect(reverse('checkout_success', args=[order.order_ref]))
         else:
             messages.error(request, 'There was an error with your form. Please double check your information.')
-    else: 
+    else:
         cart = request.session.get('cart', {})
         if not cart:
             messages.error(request, "There's nothing in your shopping cart at the moment")
@@ -85,7 +93,7 @@ def checkout(request):
         )
 
         if request.user.is_authenticated:
-            try:        
+            try:
                 profile = UserProfile.objects.get(user=request.user)
                 # Attach the user's profile to the order
                 order_form = OrderForm(initial={
@@ -115,16 +123,15 @@ def checkout(request):
     return render(request, template, context)
 
 def checkout_success(request, order_ref):
+    ''' Handle successful checkouts '''
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_ref=order_ref)
     order_items = OrderLineItem.objects.filter(order=order.id)
-
     if request.user.is_authenticated:
         profile = UserProfile.objects.get(user=request.user)
         # Attach the user's profile to the order
         order.user_profile = profile
         order.save()
-
     # Save the user's info
     if save_info:
         profile_data = {
@@ -139,11 +146,10 @@ def checkout_success(request, order_ref):
         user_profile_form = UserProfileForm(profile_data, instance=profile)
         if user_profile_form.is_valid():
             user_profile_form.save()
-
     messages.success(request, f'Order successfully processed! Your order number is {order_ref}. A confirmation email will be sent to {order.email}.')
     if 'cart' in request.session:
         del request.session['cart']
-    template = 'checkout/checkout_success.html' 
+    template = 'checkout/checkout_success.html'
     context = {
         'order': order,
         'order_items': order_items,
