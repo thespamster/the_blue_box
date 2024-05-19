@@ -1,68 +1,47 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_title %}- Item{% endblock %}
-
 {% block content %}
-
 <div class="container-fluid d-flex align-items-center">
     <div class="row justify-content-center align-items-center">
-
         <div class="col-sm-12 col-lg-6 mt-4">
             <div class="flex-column">
-
                 {% if product.image %}
-
                 <div>
                     <img src="{{ product.image_url }}"
                         class="card-img-top product-detail-image-style img-fluid z-3 position-relative"
                         alt="{{ product.name }}">
                 </div>
-
                 {% else %}
-
                 <img src="{{ MEDIA_URL }} no_image.webp"
                     class="card-img-top product-detail-image-style img-fluid z-3 position-relative"
                     alt="{{ product.name }}">
-
                 {% endif %}
-
                 <p>(hover over image to enlarge)</p>
             </div>
         </div>
-
         <div class="col-sm-12 col-lg-4 m-1 d-flex align-items-center product-detail-text-style pt-2">
             <div class="card-body">
-
                 <p class="card-text text-style text-start fw-bold">{{ product.name }}</p>
                 <p class="card-text text-style fw-light text-start">{{ product.description }}</p>
                 <div class="card-text">
                     <p class="card-text text-style fw-bold">£{{ product.price }}</p>
-
                     {% if product.rating %}
-
                     <p class="image-text-vertical-align"><img class="pe-1 rating-star-size"
                             src="{% static 'img/bootstrap_icons/star.svg' %}">{{ product.rating }}</p>
-
                     {% else %}
-
                     <p class="card-text text-style fw-light">Not yet rated</p>
-
                     {% endif %}
-
                     <p class="fw-bold">Quick search: </p>
-                        
-                        {% for tag in tags %}
-                        <div class="d-flex justify-content-center">
+                    {% for tag in tags %}
+                    <div class="d-flex justify-content-center">
                         <form role="search" class="pb-1" method="GET" action="{% url 'products' %}">
                             <input class="form-control" type="hidden" name="q" value="{{ tag }}" aria-label="Search" />
                             <button class="form-control btn btn-sm tag-btn-style" type="submit">{{ tag }}
                             </button>
                         </form>
-                        </div>
-
-                        {% endfor %}
-
+                    </div>
+                    {% endfor %}
                     <p class="card-text text-start fw-bold mt-2">Go to category: <a
                             href="{% url 'products' %}?category={{ product.category.name }}" class="a-style"><span
                                 class="tag-btn-style">{{ product.category.display_name }}</span></a></p>
@@ -83,7 +62,7 @@
                                 <a href="{% url 'products' %}" class="btn btn-keep-shopping mt-5">
                                     <span>Keep Shopping</span>
                                 </a>
-                                
+
                                 <input type="submit" class="btn btn-add-to-cart mt-5" value="Add to Cart">
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -94,5 +73,4 @@
         </div>
     </div>
 </div>
-
 {% endblock %}

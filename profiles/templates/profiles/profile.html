@@ -1,14 +1,11 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_title %}- Checkout{% endblock %}
-
 {% block content %}
-
 <div class="container-fluid">
     <div class="row d-flex justify-content-start">
         <div class="col-12 col-md-8 col-xl-6">
-                <h2 class="py-3">My Account</h2>
+            <h2 class="py-3">My Account</h2>
         </div>
     </div>
     <div class="row d-flex justify-content-start">
@@ -23,9 +20,7 @@
         <div class="col-12 col-lg-6 col order-history-style">
             <p class="fw-bold">Order History:</p>
             <div>
-
                 {% if orders %}
-
                 <table>
                     <thead>
                         <tr>
@@ -38,36 +33,28 @@
                         {% for order in orders %}
                         <tr>
                             <td class="px-3 pt-2 text-start">
-                                <a href="{% url 'order_history' order.order_ref %}"
-                                    title="{{ order.order_ref }}" class="a-style fw-bold">
+                                <a href="{% url 'order_history' order.order_ref %}" title="{{ order.order_ref }}"
+                                    class="a-style fw-bold">
                                     {{ order.order_ref }}
                                 </a>
                             </td>
                             <td class="px-3">{{ order.date }}</td>
-                            
                             <td class="text-end px-3">{{ order.grand_total }}</td>
                         </tr>
                         {% endfor %}
                     </tbody>
                 </table>
-
                 {% else %}
-
                 <p class="fw-bold">You've not placed any orders yet. Click Shop to go shopping.</p>
-
                 {% endif %}
             </div>
-            
         </div>
     </div>
 </div>
-
-
 {% endblock %}
-
 {% block postloadjs %}
-   {{ block.super }}
-   {{ stripe_public_key|json_script:"id_stripe_public_key" }}
-   {{ client_secret|json_script:"id_client_secret" }}
-   <script src="{% static 'js/stripe_elements.js' %}"></script>
+{{ block.super }}
+{{ stripe_public_key|json_script:"id_stripe_public_key" }}
+{{ client_secret|json_script:"id_client_secret" }}
+<script src="{% static 'js/stripe_elements.js' %}"></script>
 {%endblock%}

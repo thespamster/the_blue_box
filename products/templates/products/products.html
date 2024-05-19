@@ -1,49 +1,37 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_title %}- Shop{% endblock %}
-
 {% block content %}
-
 <div class="container-fluid">
     <div class="row justify-content-center">
-
         {% for item in products %}
-
         <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1">
-            
             <div class="card card-style">
-                
                 <div class="card-header mb-1 text-center">
-                    <a href="{% url 'products' %}?category={{ item.category.name }}" title="Show {{ item.category.display_name }}" class="a-style">{{ item.category.display_name }}</a>
+                    <a href="{% url 'products' %}?category={{ item.category.name }}"
+                        title="Show {{ item.category.display_name }}" class="a-style">
+                        {{ item.category.display_name}}</a>
                 </div>
                 <a href="{% url 'product_detail' item.id %}" class="a-style">
-                <div class="d-flex justify-content-center">
-
-                {% if item.image %}
-                
-                    <img src="{{ item.image_url }}" class="card-img-top product-image-style mx-auto" alt="{{ item.name }}">
-                
-                {% else %}
-                
-                    <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-image-style mx-auto" alt="{{ item.name }}">
-
-                {% endif %}
-
-                </div>
-                <div class="card-body">
-                    <p class="card-text fw-bold">{{ item.name|truncatechars:60 }}</p>
-                    <p class="card-text">{{ item.description|truncatechars:70 }}</p>
-                    <p class="card-text fw-bold">£{{ item.price }}</p>
-                </div>
-            </a>
+                    <div class="d-flex justify-content-center">
+                        {% if item.image %}
+                        <img src="{{ item.image_url }}" class="card-img-top product-image-style mx-auto"
+                            alt="{{ item.name }}">
+                        {% else %}
+                        <img src="{{ MEDIA_URL }} no_image.webp" class="card-img-top product-image-style mx-auto"
+                            alt="{{ item.name }}">
+                        {% endif %}
+                    </div>
+                    <div class="card-body">
+                        <p class="card-text fw-bold">{{ item.name|truncatechars:60 }}</p>
+                        <p class="card-text">{{ item.description|truncatechars:70 }}</p>
+                        <p class="card-text fw-bold">£{{ item.price }}</p>
+                    </div>
+                </a>
             </div>
-        
+
         </div>
-
         {% endfor %}
-
     </div>
 </div>
-
 {% endblock %}

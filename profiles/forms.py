@@ -1,16 +1,21 @@
+'''
+    This file is used to create a form for the user profile.
+'''
+
 from django import forms
 from .models import UserProfile
 
-
 class UserProfileForm(forms.ModelForm):
+    ''' Form for the user profile '''
     class Meta:
+        ''' Meta class for the user profile form '''
         model = UserProfile
-        exclude = ('user',) 
+        exclude = ('user',)
 
     def __init__(self, *args, **kwargs):
         """
-        Add placeholders and classes, remove auto-generated
-        labels and set autofocus on first field
+            Add placeholders and classes, remove auto-generated
+            labels and set autofocus on first field
         """
         super().__init__(*args, **kwargs)
         placeholders = {
