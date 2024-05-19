@@ -1,15 +1,19 @@
 console.log("main.js loaded"); // REMEMBER TO REMOVE THIS LINE
 
 // When the user scrolls down 250px from the top of the document, show the 'back to the top' button
-$( window ).on( "scroll", function() {scrollFunction()});
-$("#topButton").click(function() {
-    topFunction();
+$(window).on("scroll", function () {
+  scrollFunction();
+});
+$("#topButton").click(function () {
+  topFunction();
 });
 
 function scrollFunction() {
-  if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-      $("#topButton").css("display", "block");
-      
+  if (
+    document.body.scrollTop > 250 ||
+    document.documentElement.scrollTop > 250
+  ) {
+    $("#topButton").css("display", "block");
   } else {
     topButton.style.display = "none";
   }
@@ -23,22 +27,20 @@ function topFunction() {
 
 // JS to style the allauth templates
 
-$('input').css('border', 'none')
-$('p > input').css('width', '15rem') // Targets just the all-auth forms
-$(":submit").css("padding", "5px") 
-$(":submit").addClass("btn-keep-shopping")
+$("input").css("border", "none");
+$("p > input").css("width", "15rem"); // Targets just the all-auth forms
+$(":submit").css("padding", "5px");
+$(":submit").addClass("btn-keep-shopping");
 
 // Change style of account login page
-$('#id_password_helptext a').text("Reset")
-$('#id_password_helptext a').addClass("a-style fw-bold")
-$('label[for="id_login"]').css("display", "none")
-$('label[for="id_password"]').css("display", "none")
+$("#id_password_helptext a").text("Reset");
+$("#id_password_helptext a").addClass("a-style fw-bold");
+$('label[for="id_login"]').css("display", "none");
+$('label[for="id_password"]').css("display", "none");
 
 // Change style of account signup page
-$('label[for="id_email"]').css("display", "none")
-$('label[for="id_email2"]').css("display", "none")
-$('label[for="id_username"]').css("display", "none")
-$('label[for="id_password1"]').css("display", "none")
-$('label[for="id_password2"]').css("display", "none")
-
-
+$('label[for="id_email"]').css("display", "none");
+$('label[for="id_email2"]').css("display", "none");
+$('label[for="id_username"]').css("display", "none");
+$('label[for="id_password1"]').css("display", "none");
+$('label[for="id_password2"]').css("display", "none");

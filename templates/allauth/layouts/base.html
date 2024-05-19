@@ -2,60 +2,55 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-        <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-        crossorigin="anonymous">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="{% static 'css/style.css' %}" rel="stylesheet">
-        <title>
-            {% block head_title %}
-            {% endblock head_title %}
-        </title>
-        {% block extra_head %}
-        {% endblock extra_head %}
-    </head>
-    <body>
-        {% block body %}
-        <div class="container-flex container-style px-3">
-            <div class="row pt-5">
-                    <div class="col-12 col-md-5 mx-auto">
-                        {% if messages %}
-                            <strong>{% trans "Messages:" %}</strong>
-                            {% for message in messages %}
-                            <p>{{ message }}<p>
-                            {% endfor %}
-                        {% endif %}
-                        <a href="{% url 'products' %}" class="btn btn-keep-shopping my-5">
-                            <span>To The Shop</span>
-                        </a>
-                        {% block content %}
-                        {% endblock content %}
-                    </div>
-                </div>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <title>
+        {% block head_title %}
+        {% endblock head_title %}
+    </title>
+    {% block extra_head %}
+    {% endblock extra_head %}
+</head>
+<body>
+    {% block body %}
+    <div class="container-flex container-style px-3">
+        <div class="row pt-5">
+            <div class="col-12 col-md-5 mx-auto">
+                {% if messages %}
+                <strong>{% trans "Messages:" %}</strong>
+                {% for message in messages %}
+                <p>{{ message }}
+                <p>
+                    {% endfor %}
+                    {% endif %}
+                    <a href="{% url 'products' %}" class="btn btn-keep-shopping my-5">
+                        <span>To The Shop</span>
+                    </a>
+                    {% block content %}
+                    {% endblock content %}
             </div>
-            {% endblock body %}
-            {% block extra_body %}
-            {% endblock extra_body %}
-        <img src="{% static 'img/tardis.png' %}" id="allauth-tardis" alt="Tardis Icon"></a>
-        <script
-        src="https://code.jquery.com/jquery-3.7.1.js"
-        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
-        crossorigin="anonymous"
-        ></script>
-        <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous">
+        </div>
+    </div>
+    {% endblock body %}
+    {% block extra_body %}
+    {% endblock extra_body %}
+    <img src="{% static 'img/tardis.png' %}" id="allauth-tardis" alt="Tardis Icon"></a>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
         </script>
-        <script src="{% static 'js/main.js' %}"></script>
-    </body>
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
 </html>
