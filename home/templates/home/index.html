@@ -1,17 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block extra_title %}- Home{% endblock %}
-
 {% block content %}
-
 <div class="container-fluid">
       <div class="row">
             <div class="col-12 d-none d-md-block">
                   <img src="{% static 'img/dr_who_banner.webp' %}" class="banner-style" alt="blue_box_shop_banner">
             </div>
       </div>
-
       <div class="row my-5">
             <div class="col-12">
                   <div class="welcome-home-style d-flex align-items-center justify-content-center">
@@ -21,22 +17,25 @@
                         <div>
                               <p>
                                     Welcome to the Blue Box Shop. Here you can browse and purchase all the Dr. Who merch
-                                    that you could possibly want. Browse the shop, check out the featured items or search
-                                    the site for what you want. If you want to make a purchase you don't have to have an account
-                                    but an account will help you keep track of your purchases. For the coming soon features of 
+                                    that you could possibly want. Browse the shop, check out the featured items or
+                                    search
+                                    the site for what you want. If you want to make a purchase you don't have to have an
+                                    account
+                                    but an account will help you keep track of your purchases. For the coming soon
+                                    features of
                                     Message Boards and Fan Art sections you will need an account to interact with them.
-                                    Account creation is free and has been made even easier if you already have a Google account.
+                                    Account creation is free and has been made even easier if you already have a Google
+                                    account.
                               </p>
                               <p>
-                                    The site rules are simple. This is a site run by Whovians for Whovians. 
-                                    Be nice! If you have any questions or need help with anything 
-                                    please get in touch. We will always do our best to help you. 
+                                    The site rules are simple. This is a site run by Whovians for Whovians.
+                                    Be nice! If you have any questions or need help with anything
+                                    please get in touch. We will always do our best to help you.
                               </p>
                         </div>
                   </div>
             </div>
       </div>
-
       <div class="row justify-content-center">
             <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1 d-flex align-items-center">
                   <div class="card card-style">
@@ -53,30 +52,21 @@
                         </div>
                   </div>
             </div>
-
             {% for featured in featured_products %}
-
             <div class="col-12 col-md-5 col-lg-3 col-xl-2 m-1 d-flex justify-content-center align-items-center">
-
                   <div class="card card-style w-100">
                         <a href="{% url 'product_detail' featured.id %}" class="a-style" title="Goto this item">
                               <div class="card-header mb-1 text-center">
                                     {{ featured.category.display_name }}
                               </div>
                               <div class="d-flex justify-content-center">
-
                                     {% if featured.image %}
-
                                     <img src="{{ featured.image_url }}" class="card-img-top product-image-style mx-auto"
                                           alt="{{ featured.name }}">
-
                                     {% else %}
-
                                     <img src="{{ MEDIA_URL }} no_image.webp"
                                           class="card-img-top product-image-style mx-auto" alt="{{ featured.name }}">
-
                                     {% endif %}
-
                               </div>
                               <div class="card-body text-center">
                                     <p class="card-text"><strong>£{{ featured.price }}</strong></p>
@@ -84,10 +74,7 @@
                         </a>
                   </div>
             </div>
-
             {% endfor %}
-
       </div>
 </div>
-
 {% endblock %}
