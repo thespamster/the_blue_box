@@ -37,7 +37,7 @@ def profile(request):
 def order_history(request, order_ref):
     ''' Display the user's order history '''
     order = get_object_or_404(Order, order_ref=order_ref)
-    order_items = OrderLineItem.objects.filter(order=order_ref)
+    order_items = OrderLineItem.objects.filter(order=order.id)
 
     messages.info(request, (
         f'This is a past confirmation for order number {order_ref}. '
