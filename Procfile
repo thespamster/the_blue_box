@@ -1,0 +1,1 @@
+web: gunicorn blue_box_exchange.wsgi:application
