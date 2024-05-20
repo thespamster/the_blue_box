@@ -212,7 +212,8 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-if USE_AWS in os.environ:
+use_aws = os.getenv('USE_AWS')
+if use_aws == 'True':
     # AWS bucket configuration
     AWS_STORAGE_BUCKET_NAME = 'awsblueboxbucket'
     AWS_S3_REGION_NAME = 'eu-north-1'
