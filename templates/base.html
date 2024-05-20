@@ -108,8 +108,8 @@
       <div class="d-flex flex-column align-items-center">
         {% for cat in categories %}
         <div>
-          <a href="{% url 'products' %}?category={{ cat.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">{{
-            cat.display_name }}</a>
+          <a href="{% url 'products' %}?category={{ cat.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">
+            {{ cat.display_name }}</a>
         </div>
         {% endfor %}
       </div>
@@ -117,8 +117,8 @@
       <div class="d-flex flex-column align-items-center">
         {% for doctor in doctors %}
         <div>
-          <a href="{% url 'products' %}?q={{ doctor.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">{{
-            doctor.name }}</a>
+          <a href="{% url 'products' %}?q={{ doctor.name }}" class="btn btn-sm btn-outline-primary tag-btn-style">
+            {{ doctor.name }}</a>
         </div>
         {% endfor %}
         <p class="text-center offcanvas-text-style pt-4 fw-bold">Search by price</p>
