@@ -36,7 +36,7 @@ STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mp4-blue-box-shop.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['mp4-blueboxshop-3b80029a5b05.herokuapp.com', 'localhost']
 
 # Application definition
 
