@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-p0s!vs-e#5!#i4^0s-np2t(5&w-b9j@#)vph647qfd6o5cl0+a'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # Add .env variables anywhere before social accounts details to enable login with google plus add Stripe keys
 load_dotenv()
@@ -34,7 +34,7 @@ STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
 STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = 'DEVELOPMENT' in os.environ
 
 ALLOWED_HOSTS = ['mp4-blueboxshop-3b80029a5b05.herokuapp.com', 'localhost']
 
