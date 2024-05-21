@@ -14,7 +14,7 @@
                     <tr>
                         <th scope="row"></th>
                         <td class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
-                        <td class="text-start align-middle table-data-style">{{ item.product|truncatechars:15 }}</td>
+                        <td class="text-start align-middle table-data-style w-25">{{ item.product|truncatechars:15 }}</td>
                             <td class="table-data-style align-middle ">
                                 <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
                                     {% csrf_token %}
