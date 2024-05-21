@@ -13,7 +13,7 @@
                 <tbody>
                     <tr>
                         <th scope="row"></th>
-                        <td class="align-middle"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
+                        <td class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
                         <td class="text-start align-middle table-data-style">{{ item.product }}</td>
                         <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
                             {% csrf_token %}
@@ -44,7 +44,7 @@
                     {% endfor %}
                     <tr>
                         <th scope="row"></th>
-                        <td></td>
+                        <td class="d-none d-md-block"></td>
                         <td></td>
                         <td></td>
                         <td class="text-end fw-bold">P&P</td>
