@@ -8,7 +8,6 @@ from django.db import models
 
 class Doctors(models.Model):
     ''' Model for the Doctors table ''' 
-    id = models.BigIntegerField(primary_key=True)
     name = models.CharField(max_length=254)
 
     class Meta:
@@ -16,5 +15,5 @@ class Doctors(models.Model):
         verbose_name_plural = 'Doctors'
 
     def __str__(self):
-        return self.name, self.id
+        return self.name
     
