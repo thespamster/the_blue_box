@@ -59,7 +59,7 @@
                     </tr>
                     <tr>
                         <th scope="row"></th>
-                        <td class="d-none d-md-block"></td>
+                        <td></td>
                         <td class="text-center fw-bold table-data-style">{{ product_count }}
                             {% if product_count == 1 %}
                             Item in cart
@@ -67,7 +67,7 @@
                             Items in cart
                             {% endif %}
                         </td>
-                        <td class="d-none d-md-block"></td>
+                        <td></td>
                         <td class="text-end fw-bold table-data-style">Total</td>
                         <td class="text-end fw-bold table-data-style">
                             {% if total_cost %}
@@ -76,10 +76,11 @@
                             £0.00
                             {% endif %}
                         </td>
-                        <td class="d-none d-md-block"></td>
+                        <td></td>
                     </tr>
                 </tbody>
             </table>
+            <p>Set quantity to 0 to delete from cart</p>
             {% else %}
             <p class="fw-bold table-data-style mt-5">You haven't added anything to your cart yet</p>
             <p class="fw-bold table-data-style">Click the 'Carry On Shopping' button to go to the shop</p>
