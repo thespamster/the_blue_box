@@ -24,7 +24,7 @@
                             <td class="table-data-style align-middle"><button type="submit" class="btn"
                                     title="update quantity"><img class="update-icon-style mb-1"
                                         src="{% static 'img/bootstrap_icons/arrow-clockwise.svg' %}"
-                                        alt="Bootstrap trash3 icon"></button>
+                                        alt="arrow-clockwise icon"></button>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </form>
                         </td>
@@ -36,7 +36,7 @@
                                     value="0" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.item_id }}">
                                 <button type="submit" class="btn align-middle" title="delete item"><img
                                         class="bs-bin-style" src="{% static 'img/bootstrap_icons/trash3.svg' %}"
-                                        alt="Bootstrap trash3 icon"></button>
+                                        alt="trash icon"></button>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </form>
                         </td>
@@ -59,12 +59,12 @@
                     </tr>
                     <tr>
                         <th scope="row"></th>
-                        <td></td>
+                        <td class="d-none d-md-block"></td>
                         <td class="text-center fw-bold table-data-style">{{ product_count }}
                             {% if product_count == 1 %}
-                            Item in shopping trolley
+                            Item in cart
                             {% else %}
-                            Items in shopping trolley
+                            Items in cart
                             {% endif %}
                         </td>
                         <td></td>
