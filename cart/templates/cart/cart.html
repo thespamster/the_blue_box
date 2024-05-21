@@ -35,7 +35,7 @@
                                 {% csrf_token %}
                                 <input class="form-control qty_input quantity-style" type="hidden" name="quantity"
                                     value="0" data-item_id="{{ item.product.id }}" id="id_qty_{{ item.item_id }}">
-                                <button type="submit" class="btn align-middle d-none d-md-block" title="delete item"><img
+                                <button type="submit" class="btn align-middle" title="delete item"><img
                                         class="bs-bin-style" src="{% static 'img/bootstrap_icons/trash3.svg' %}"
                                         alt="trash icon"></button>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
