@@ -9,14 +9,10 @@ from django.shortcuts import get_object_or_404
 from products.models import Category, Product
 from home.models import Doctors
 
-
-
-
 def add_variable_to_context(request):
-
+    ''' returns categories and doctors across the site '''
     categories = Category.objects.all()
     doctors = Doctors.objects.all()
-
     return {
         'categories': categories,
         'doctors': doctors,
@@ -27,7 +23,6 @@ def cart_contents(request):
         Returns the cart contents and calculates the total cost
         and cost incl. delivery
     '''
-
     cart_items = []
     total_cost = 0
     product_count = 0
@@ -56,4 +51,3 @@ def cart_contents(request):
         'total_with_delivery': total_with_delivery,
     }
     return context
-
