@@ -8,28 +8,27 @@
         <div class="col-12 col-md-8 col-xl-6">
             <h2 class="my-5">In Your Cart</h2>
             {% if cart_items %}
-            <table class="table align-middle">
+            
                 {% for item in cart_items %}
-                <tbody>
-                    <tr>
-                        <th scope="row"></th>
-                        <td class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
-                        <td class="text-start align-middle table-data-style">{{ item.product|truncatechars:15 }}</td>
+                
+                    <div class="row">
+                        <div class="col" class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></div>
+                        <div class="col text-start align-middle table-data-style">{{ item.product|truncatechars:15 }}</div>
                         <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
                             {% csrf_token %}
-                            <td class="table-data-style align-middle "><input
+                            <div class="table-data-style align-middle col"><input
                                     class="form-control qty_input quantity-style" type="number" name="quantity"
                                     value="{{ item.quantity }}" min="0" max="99" data-item_id="{{ item.product.id }}"
-                                    id="id_qty_{{ item.item_id }}"></td>
-                            <td class="table-data-style align-middle"><button type="submit" class="btn"
+                                    id="id_qty_{{ item.item_id }}"></div>
+                            <div class="table-data-style align-middle"><button type="submit" class="btn"
                                     title="update quantity"><img class="update-icon-style mb-1"
                                         src="{% static 'img/bootstrap_icons/arrow-clockwise.svg' %}"
                                         alt="arrow-clockwise icon"></button>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
+                            </div>
                         </form>
-                        </td>
-                        <td class="text-end table-data-style align-middle">£{{ item.product.price }}</td>
-                        <td>
+                        <div class="col text-end table-data-style align-middle">£{{ item.product.price }}</div>
+                        <div class="col">
                             <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
                                 {% csrf_token %}
                                 <input class="form-control qty_input quantity-style" type="hidden" name="quantity"
@@ -39,47 +38,45 @@
                                         alt="trash icon"></button>
                                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
                             </form>
-                        </td>
-                    </tr>
+                        </div>
+                    </div>
                     {% endfor %}
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td class="text-end fw-bold">P&P</td>
-                        <td class="text-end fw-bold">
+                    <div class="row">
+                        
+                        
+                        <div class="col text-end fw-bold">P&P</div>
+                        <div class="col text-end fw-bold">
                             {% if delivery == 0 %}
                             <span>FREE</span>
                             {% else %}
                             <span>£{{ delivery }}</span>
                             {% endif %}
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td class="text-center fw-bold table-data-style">{{ product_count }}
+                        </div>
+                        
+                    </div>
+                    <div class="row">
+                        
+                        
+                        <div class="col text-center fw-bold table-data-style">{{ product_count }}
                             {% if product_count == 1 %}
                             Item in cart
                             {% else %}
                             Items in cart
                             {% endif %}
-                        </td>
-                        <td></td>
-                        <td class="text-end fw-bold table-data-style">Total</td>
-                        <td class="text-end fw-bold table-data-style">
+                        </div>
+                        
+                        <div class="col text-end fw-bold table-data-style">Total</div>
+                        <div class="text-end fw-bold table-data-style">
                             {% if total_cost %}
                             £{{ total_with_delivery|floatformat:2 }}
                             {% else %}
                             £0.00
                             {% endif %}
-                        </td>
-                        <td></td>
-                    </tr>
-                </tbody>
-            </table>
+                        </div>
+                        
+                    </div>
+            
+            
             <p>Set quantity to 0 to delete from cart</p>
             {% else %}
             <p class="fw-bold table-data-style mt-5">You haven't added anything to your cart yet</p>
