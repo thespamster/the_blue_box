@@ -15,5 +15,5 @@ class Doctors(models.Model):
         verbose_name_plural = 'Doctors'
 
     def __str__(self):
-        return self.name
+        return self.name, self.id
     
