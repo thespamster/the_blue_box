@@ -7,7 +7,8 @@ from django.db import models
 # Create your models here.
 
 class Doctors(models.Model):
-    ''' Model for the Doctors table ''' 
+    ''' Model for the Doctors table '''
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=254)
 
     class Meta:
