@@ -10,6 +10,7 @@ from home.models import Doctors
 class DoctorsAdmin(admin.ModelAdmin):
     ''' Define the Doctors admin '''
     list_display = (
+        'id',
         'name',
     )
 
