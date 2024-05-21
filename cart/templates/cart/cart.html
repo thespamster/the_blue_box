@@ -15,9 +15,10 @@
                         <th scope="row"></th>
                         <td class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
                         <td class="text-start align-middle table-data-style">{{ item.product|truncatechars:15 }}</td>
-                        <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
-                            {% csrf_token %}
-                            <td class="table-data-style align-middle "><input
+                            <td class="table-data-style align-middle ">
+                                <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
+                                    {% csrf_token %}
+                                <input
                                     class="form-control qty_input quantity-style" type="number" name="quantity"
                                     value="{{ item.quantity }}" min="0" max="99" data-item_id="{{ item.product.id }}"
                                     id="id_qty_{{ item.item_id }}"></td>
