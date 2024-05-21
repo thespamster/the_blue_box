@@ -8,7 +8,6 @@ from django.db import models
 
 class Doctors(models.Model):
     ''' Model for the Doctors table ''' 
-    pk_doctor = models.AutoField(primary_key=True) 
     name = models.CharField(max_length=254)
 
     class Meta:
