@@ -577,3 +577,9 @@ body {
     max-height: 75dvh;
     overflow-y: auto;
 }
+
+/* CSS to style tables directly */
+
+table {
+    width: 100%;
+}
