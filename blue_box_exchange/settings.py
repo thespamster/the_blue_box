@@ -29,9 +29,6 @@ load_dotenv()
 
 CLIENT_ID = os.getenv('CLIENT_ID')
 CLIENT_SECRET = os.getenv('CLIENT_SECRET')
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
-STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEVELOPMENT' in os.environ
@@ -136,8 +133,17 @@ SOCIALACCOUNT_PROVIDERS = {
 SITE_ID=1
 
 # temp reroute for emails so that they log to the console
-
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+if 'DEVELOPMENT' in os.environ:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+    DEFAULT_FROM_EMAIL = 'orders@blueboxshop.com'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_USE_TLS = True
+    EMAIL_PORT = 587
+    EMAIL_HOST = 'smtp-mail.outlook.com'
+    EMAIL_HOST_USER = os.environ.get('OUTLOOK_HOST')
+    EMAIL_HOST_PASSWORD = os.environ.get('OUTLOOK_PASS')
+    DEFAULT_FROM_EMAIL = os.environ.get('OUTLOOK_HOST')
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
@@ -165,8 +171,6 @@ else:
             'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
         }
     }
-
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
@@ -209,28 +213,37 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-# AWS bucket configuration
-AWS_STORAGE_BUCKET_NAME = 'blueboxshopbucket'
-AWS_S3_REGION_NAME = 'eu-north-1'
-AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
-AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
-AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+if 'USE_AWS' in os.environ:
+    # Cache control
+    AWS_S3_OBJECT_PARAMETERS = {
+        'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
+        'CacheControl': 'max-age=94608000',
+    }
 
-# Static and media files storage
-STATICFILES_STORAGE = 'custom_storages.StaticStorage'
-STATICFILES_LOCATION = 'static'
-DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
-MEDIAFILES_LOCATION = 'media'
+    # AWS bucket configuration
+    AWS_STORAGE_BUCKET_NAME = 'blueboxshopbucket'
+    AWS_S3_REGION_NAME = 'eu-north-1'
+    AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
-# Override static and media URLs in production
-STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
-MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+    # Static and media files storage
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+
+    # Override static and media URLs in production
+    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
 
 # Stripe
 FREE_DELIVERY = 50
 STANDARD_DELIVERY_COST = 2.99
 STRIPE_CURRENCY = 'gbp'
-DEFAULT_FROM_EMAIL = 'orders@blueboxshop.com'
+STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY')
+STRIPE_WH_KEY = os.getenv('STRIPE_WH_KEY')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
