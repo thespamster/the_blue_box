@@ -13,7 +13,7 @@
                 <tbody>
                     <tr>
                         <th scope="row"></th>
-                        <td class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
+                        <td class="align-middle"><img src="{{ item.product.image_url }}" class="cart-image-style d-none d-md-block"></td>
                         <td class="text-start align-middle table-data-style w-25">{{ item.product|truncatechars:15 }}</td>
                             <td class="table-data-style align-middle ">
                                 <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
@@ -81,7 +81,7 @@
                     </tr>
                 </tbody>
             </table>
-            <p>Set quantity to 0 to delete from cart</p>
+            <p>Set quantity to 0 will also delete from cart</p>
             {% else %}
             <p class="fw-bold table-data-style mt-5">You haven't added anything to your cart yet</p>
             <p class="fw-bold table-data-style">Click the 'Carry On Shopping' button to go to the shop</p>
