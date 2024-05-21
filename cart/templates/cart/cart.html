@@ -8,13 +8,13 @@
         <div class="col-12 col-md-8 col-xl-6">
             <h2 class="my-5">In Your Cart</h2>
             {% if cart_items %}
-            <table class="table">
+            <table class="table align-middle">
                 {% for item in cart_items %}
                 <tbody>
                     <tr>
                         <th scope="row"></th>
                         <td class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></td>
-                        <td class="text-start align-middle table-data-style">{{ item.product }}</td>
+                        <td class="text-start align-middle table-data-style">{{ item.product|truncatechars:15 }}</td>
                         <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
                             {% csrf_token %}
                             <td class="table-data-style align-middle "><input
