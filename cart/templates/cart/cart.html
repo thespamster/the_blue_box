@@ -11,7 +11,7 @@
             
                 {% for item in cart_items %}
                 
-                    <div class="row">
+                    <div class="row d-flex">
                         <div class="col" class="align-middle d-none d-md-block"><img src="{{ item.product.image_url }}" class="cart-image-style"></div>
                         <div class="col text-start align-middle table-data-style">{{ item.product|truncatechars:15 }}</div>
                         <form class="form" action="{% url 'update_cart' item.item_id %}" method="POST">
